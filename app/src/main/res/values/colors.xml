@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <!--My colors-->
+    <color name="appColor">#252B32</color>
+    <color name="topBarColor">#323A44</color>
+    <color name="transparent">#00000000</color>
+    <color name="whiteSmoke">#F5F5F5</color>
+    <color name="black">#000000</color>
+    <color name="gray">#808080</color>
+    <color name="dark_gray">#808080</color>
+    <color name="edit_profile_background_color">#F5F6F8</color>
+    <color name="background_material_light_1">@color/material_grey_50</color>
+    <color name="circular_image_placeholder">#E5ECF1</color>
+    <color name="black90">#90000000</color>
+    <color name="black10">#10000000</color>
+    <color name="black50">#50000000</color>
+    <color name="wheat">#F5DEB3</color>
+    <color name="burlyWood">#FFD39B</color>
+    <color name="lightCoral">#F08080</color>
+    <color name="lightGreen">#75B84D</color>
+    <color name="lightGreen20">#9075B84D</color>
+    <color name="googleGreen">#B6E9B5</color>
+    <color name="googleRed">#db3236</color>
+    <color name="white">#FFFFFF</color>
+    <color name="facebookBlue">#3b5998</color>
+    <color name="facebookBlue50">#503b5998</color>
+    <color name="green">#3dbb93</color>
+    <color name="red">#e25b68</color>>
+    <color name="red90">#90e25b68</color>
+    <color name="buttonDisabledColor">#9B9B9B</color>
+    <color name="crispyBlue">#4A90E2</color>
+    <color name="crispyBlue90">#904A90E2</color>
+    <color name="tProfileColor">#f3f7fa</color>
+    <color name="mildBlue">#FF80D8FF</color>
+
+</resources>

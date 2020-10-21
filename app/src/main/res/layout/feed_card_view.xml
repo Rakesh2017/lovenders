@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    card_view:cardCornerRadius="10dp"
+    card_view:cardElevation="1dp"
+    card_view:cardPreventCornerOverlap="true"
+    card_view:cardBackgroundColor="@color/white"
+    android:background="@color/white"
+    android:id="@+id/fc_cardview"
+    >
+
+    <!--root layout-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        >
+
+        <!--main image-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:minHeight="200dp"
+            android:orientation="vertical"
+            android:background="@color/gray"
+            >
+            <ImageView
+                android:id="@+id/fc_profile_image_iv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:adjustViewBounds="true"
+                android:fitsSystemWindows="true"
+                android:scaleType="centerCrop"
+                android:transitionName="image"
+                tools:ignore="ContentDescription" />
+
+
+        </RelativeLayout>
+
+
+        <!--super like layout-->
+        <RelativeLayout
+            android:id="@+id/fc_like_rl"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/black90"
+            android:visibility="invisible">
+
+            <pl.droidsonroids.gif.GifImageView
+                android:layout_width="192dp"
+                android:layout_height="192dp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/ic_cupid" />
+
+        </RelativeLayout>
+
+        <!--super like layout-->
+
+        <RelativeLayout
+            android:id="@+id/fc_super_like_rl"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/black90"
+            android:visibility="invisible">
+
+            <pl.droidsonroids.gif.GifImageView
+                android:layout_width="192dp"
+                android:layout_height="192dp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/ic_super_like_new_" />
+
+        </RelativeLayout>
+
+
+        <!--user data-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@color/transparent"
+            >
+
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            card_view:cardBackgroundColor="@color/white"
+            card_view:cardElevation="0dp"
+            android:layout_marginTop="21dp"
+            card_view:cardCornerRadius="10dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:id="@+id/gfhj"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:paddingStart="12dp"
+                    android:paddingTop="4dp"
+                    android:paddingEnd="12dp">
+
+                    <RelativeLayout
+                        android:id="@+id/fc_user_data_rl"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="60dp"
+                        tools:ignore="RtlSymmetry">
+                        <!--name-->
+                        <TextView
+                            android:id="@+id/fc_user_name_tv"
+                            style="@style/TextStyle20"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/francois"
+                            android:textAllCaps="true"
+                            android:textColor="@color/appColor"
+                            android:textSize="20sp"
+                            android:layout_alignBottom="@+id/fc_age_tv"
+                            android:textStyle="bold"
+                            />
+                        <!--age-->
+                        <TextView
+                            android:id="@+id/fc_age_tv"
+                            style="@style/TextStyle20"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_toEndOf="@+id/fc_user_name_tv"
+                            android:fontFamily="@font/francois"
+                            android:textColor="@color/appColor"
+                            android:textSize="22sp"
+                            android:textStyle="bold" />
+
+                    </RelativeLayout>
+
+
+                    <!--about-->
+                    <TextView
+                        android:id="@+id/fc_about_tv"
+                        style="@style/TextStyle14Login"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/fc_user_data_rl"
+                        android:maxLines="2"
+                        android:textColor="@color/appColor"
+                        android:textSize="14sp"
+                        android:textStyle="normal" />
+
+                    <!--kilometers-->
+                    <TextView
+                        android:id="@+id/fc_distance_tv"
+                        style="@style/TextStyle20"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/fc_about_tv"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginEnd="16dp"
+                        android:drawableStart="@drawable/ic_location_placeholder"
+                        android:drawablePadding="4dp"
+                        android:elevation="@dimen/elevation"
+                        android:maxLines="1"
+                        android:textColor="@color/black90"
+                        android:textSize="14sp"
+                        android:textStyle="normal|italic" />
+
+                    <!--<TextView-->
+                       <!---->
+                        <!--android:layout_width="28dp"-->
+                        <!--android:layout_height="28dp"-->
+                        <!--android:layout_alignParentEnd="true"-->
+                        <!--android:layout_marginTop="8dp"-->
+                        <!--android:background="@drawable/ic_info_white_24dp"-->
+                        <!--android:clickable="true"-->
+                        <!--android:elevation="@dimen/elevation"-->
+                        <!--android:focusable="true"-->
+                        <!--tools:ignore="ContentDescription" />-->
+
+                </RelativeLayout>
+
+                <!--4 icons-->
+                <LinearLayout
+                    android:id="@+id/fc_ll"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/gfhj"
+                    android:layout_marginTop="6dp"
+                    android:background="@color/white"
+                    android:baselineAligned="false"
+                    android:divider="@drawable/divider"
+                    android:orientation="horizontal"
+                    android:paddingBottom="6dp"
+                    android:showDividers="middle"
+                    android:weightSum="4">
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <ImageView
+                            android:layout_width="42dp"
+                            android:layout_height="42dp"
+                            android:layout_centerInParent="true"
+                            android:layout_gravity="center_vertical"
+                            android:background="@drawable/circle_shadow"
+                            tools:ignore="ContentDescription" />
+
+                        <ImageButton
+                            android:id="@+id/fc_rewind_ib"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_centerInParent="true"
+                            android:layout_gravity="center_vertical"
+                            android:background="@drawable/ic_rewind"
+                            android:src="@drawable/ripple_to_buttons_white"
+                            tools:ignore="ContentDescription" />
+
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <ImageView
+                            android:layout_width="42dp"
+                            android:layout_height="42dp"
+                            android:layout_centerInParent="true"
+                            android:layout_gravity="center_vertical"
+                            android:background="@drawable/circle_shadow"
+                            tools:ignore="ContentDescription" />
+
+                        <ImageButton
+                            android:id="@+id/fc_like_ib"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_centerInParent="true"
+                            android:layout_gravity="center_vertical"
+                            android:background="@drawable/ic_heart"
+                            android:src="@drawable/ripple_to_buttons_white"
+                            tools:ignore="ContentDescription" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <ImageView
+                            android:layout_width="42dp"
+                            android:layout_height="42dp"
+                            android:layout_centerInParent="true"
+                            android:layout_gravity="center_vertical"
+                            android:background="@drawable/circle_shadow"
+                            tools:ignore="ContentDescription" />
+
+                        <ImageButton
+                            android:id="@+id/fc_super_like_ib"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_centerInParent="true"
+                            android:layout_gravity="center_vertical"
+                            android:background="@drawable/ic_star_three"
+                            android:src="@drawable/ripple_to_buttons_white"
+                            tools:ignore="ContentDescription" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <ImageView
+                            android:layout_width="42dp"
+                            android:layout_height="42dp"
+                            android:layout_centerInParent="true"
+                            android:layout_gravity="center_vertical"
+                            android:background="@drawable/circle_shadow"
+                            tools:ignore="ContentDescription" />
+
+                        <ImageButton
+                            android:id="@+id/fc_share_ib"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_centerInParent="true"
+                            android:layout_gravity="center_vertical"
+                            android:background="@drawable/ic_share"
+                            android:src="@drawable/ripple_to_buttons_white"
+                            tools:ignore="ContentDescription" />
+
+                    </RelativeLayout>
+                </LinearLayout>
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/circle_shadow"
+                android:padding="2dp"
+                >
+                <ImageButton
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
+                    android:background="@drawable/ic_info_white_24dp"
+                    android:src="@drawable/ripple_to_buttons_white"
+                    android:layout_centerInParent="true"
+                    android:id="@+id/fc_info_ib"
+                    tools:ignore="ContentDescription" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <!--left swipe-->
+        <RelativeLayout
+            android:id="@+id/fc_left_image_iv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/lightGreen20">
+
+            <ImageView
+                android:layout_width="112dp"
+                android:layout_height="112dp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/ic_heart_blue"
+                tools:ignore="ContentDescription" />
+
+
+        </RelativeLayout>
+
+        <!--right swipe-->
+        <RelativeLayout
+            android:id="@+id/fc_right_image_iv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/red90">
+
+            <ImageView
+                android:layout_width="112dp"
+                android:layout_height="112dp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/ic_cross"
+                tools:ignore="ContentDescription" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>

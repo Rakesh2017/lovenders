@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:clickable="true"
+    android:focusable="true"
+    android:background="@color/white"
+    tools:context=".Messaging">
+
+    <!--our toolbar -->
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/ac_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/crispyBlue"
+        android:elevation="@dimen/elevation"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:id="@+id/ac_back_ib"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:background="@drawable/ic_back"
+                android:layout_centerVertical="true"
+                android:backgroundTint="@color/white"
+                android:src="@drawable/ripple_to_buttons_white"
+                tools:ignore="ContentDescription" />
+
+            <!--match image-->
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/ac_match_image_iv"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:background="@drawable/ic_default_profile"
+                android:layout_toEndOf="@+id/ac_back_ib"
+                android:layout_marginStart="16dp"
+                app:civ_border_width="1dp"
+                android:scaleType="centerCrop"
+                app:civ_border_color="@color/crispyBlue"/>
+
+            <!--match name-->
+            <TextView
+                android:id="@+id/ac_match_name_tv"
+                style="@style/TextStyle16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@+id/ac_match_image_iv"
+                android:layout_marginStart="8dp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:fontFamily="@font/francois"
+                tools:ignore="RtlSymmetry" />
+
+        </RelativeLayout>
+    </android.support.v7.widget.Toolbar>
+
+    <!--chatting recycler view-->
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/ac_recyclerView"
+        android:layout_above="@+id/am_ll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/ac_toolbar"
+        android:paddingStart="8dp"
+        android:layout_marginBottom="4dp"
+        android:paddingEnd="8dp"
+        android:background="@color/white"
+        />
+
+    <com.github.ybq.android.spinkit.SpinKitView
+        android:id="@+id/ac_spin_kit"
+        style="@style/SpinKitView.Small.Circle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        app:SpinKit_Color="@color/black" />
+
+    <LinearLayout
+        android:id="@+id/am_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="2"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        >
+        <!--edit text-->
+        <EditText
+            android:id="@+id/ac_messageText"
+            style="@style/TextStyle14Login"
+            android:textSize="15sp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.7"
+            android:textColor="@color/black"
+            android:hint="@string/type_a_message"
+            android:padding="@dimen/text_view_padding"
+            android:paddingBottom="14dp"
+            android:maxLines="3"
+            android:maxLength="140"
+            tools:ignore="Autofill"
+            android:inputType="textShortMessage" />
+
+        <!--send button-->
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.3"
+            android:layout_gravity="center_vertical"
+            >
+            <ImageButton
+                android:id="@+id/ac_send_message"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/ic_send_message"
+                android:layout_centerHorizontal="true"
+                tools:ignore="ContentDescription"
+                android:src="@drawable/ripple_to_buttons_white"
+                />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

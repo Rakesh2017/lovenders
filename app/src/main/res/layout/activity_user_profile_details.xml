@@ -1,0 +1,727 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/pd_rel"
+    android:background="@color/white"
+    tools:context=".UserProfileDetails">
+
+    <android.support.design.widget.CoordinatorLayout
+        android:id="@+id/fd_CoordinatorLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        >
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/fd_appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:fitsSystemWindows="true"
+        android:background="@color/gray"
+        >
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/fd_collapse_tool"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            android:fitsSystemWindows="true"
+            app:contentScrim="@color/white"
+            app:expandedTitleMarginStart="48dp"
+            app:expandedTitleMarginEnd="64dp"
+            android:background="@color/gray"
+            tools:targetApi="lollipop">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_collapseMode="pin"
+                android:background="@color/gray"
+                >
+
+                <!--user image-->
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/fd_slider_recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="350dp"
+                    android:orientation="horizontal"
+                    app:reverseLayout="true"
+                    android:transitionName="profile"
+                    app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+                    />
+
+                <!--share dots-->
+                <ImageButton
+                    android:id="@+id/fd_report"
+                    android:layout_width="32dp"
+                    android:visibility="visible"
+                    android:layout_height="32dp"
+                    android:background="@drawable/ic_three_dots_white_24dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    tools:ignore="ContentDescription" />
+
+                    <TextView
+                        android:id="@+id/fd_spam_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="invisible"
+                        android:text="@string/report_profile"
+                        style="@style/TextStyle14Login"
+                        android:textColor="@color/appColor"
+                        android:drawableStart="@drawable/ic_spam"
+                        android:drawablePadding="7dp"
+                        android:gravity="center_vertical"
+                        android:layout_toStartOf="@+id/fd_report"
+                        android:layout_alignBottom="@+id/fd_report"
+                        android:background="@drawable/rounded_white_background_1"
+                        android:padding="4dp"
+                        />
+
+
+
+            </RelativeLayout>
+        </android.support.design.widget.CollapsingToolbarLayout>
+    </android.support.design.widget.AppBarLayout>
+
+
+
+        <!--change here-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            >
+
+        <!--about card view-->
+        <RelativeLayout
+            android:id="@+id/up_about_card_view"
+            android:layout_width="match_parent"
+            android:layout_height="92dp"
+            android:background="@color/crispyBlue"
+
+            >
+            <!--name-->
+            <TextView
+                android:id="@+id/fd_name_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/TextStyle14LoginCoiny"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:textAllCaps="true"
+                android:padding="@dimen/text_view_padding"
+                android:transitionName="text"
+                android:fontFamily="@font/francois"
+                />
+        </RelativeLayout>
+
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:cardCornerRadius="24dp"
+                app:cardBackgroundColor="@color/white"
+                android:background="@color/white"
+                android:layout_marginTop="52dp"
+                app:cardElevation="0dp"
+                android:elevation="0dp"
+                >
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/pd_nested_scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+            <!--super like-->
+            <ImageButton
+                android:id="@+id/fd_super_like"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:background="@drawable/star"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:src="@drawable/ripple_to_buttons_white"
+                tools:ignore="ContentDescription" />
+
+
+
+                <!--go back-->
+                <ImageButton
+                    android:id="@+id/fd_back_ib"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:background="@drawable/ic_down_arrow"
+                    android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                    android:layout_marginTop="@dimen/activity_vertical_margin"
+                    android:src="@drawable/ripple_to_buttons_white"
+                    android:layout_alignParentEnd="true"
+                    tools:ignore="ContentDescription" />
+
+                <RelativeLayout
+                    android:id="@+id/fd_photos_swipes_rl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/activity_vertical_margin"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/photos_swipes_rl_background"
+                    tools:ignore="RelativeOverlap">
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="20dp"
+                        android:paddingEnd="20dp"
+                        android:paddingTop="4dp"
+                        android:layout_marginBottom="4dp"
+                        >
+                        <RelativeLayout
+                            android:id="@+id/fd_photos_rl"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+                            <TextView
+                                android:id="@+id/fd_photos_count"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                style="@style/TextStyle16"
+                                android:layout_centerHorizontal="true"
+                                android:gravity="center_horizontal"
+                                android:textStyle="bold"
+                                tools:ignore="TooDeepLayout" />
+                            <!--photos-->
+                            <TextView
+                                android:layout_below="@+id/fd_photos_count"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/photos"
+                                style="@style/TextStyle14Login"
+                                android:textColor="@color/gray"
+                                android:gravity="center_horizontal"
+                                android:textStyle="bold"
+                                />
+
+                        </RelativeLayout>
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="40dp"
+                            android:layout_centerInParent="true"
+                            android:layout_marginStart="12dp"
+                            android:background="#30808080"/>
+
+                        <!--swipes-->
+                        <RelativeLayout
+                            android:layout_toEndOf="@+id/fd_photos_rl"
+                            android:layout_marginStart="52dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+                            <TextView
+                                android:id="@+id/fd_swipes_count"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                style="@style/TextStyle16"
+                                android:layout_centerHorizontal="true"
+                                android:gravity="center_horizontal"
+                                android:textStyle="bold"
+                                />
+                            <!--photos-->
+                            <TextView
+                                android:layout_below="@+id/fd_swipes_count"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/swipes"
+                                style="@style/TextStyle14Login"
+                                android:textColor="@color/gray"
+                                android:gravity="center_horizontal"
+                                android:textStyle="bold"
+                                />
+                        </RelativeLayout>
+                    </RelativeLayout>
+                </RelativeLayout>
+
+                <!--all photos-->
+                <TextView
+                    android:id="@+id/fd_photos_tv"
+                    android:layout_below="@+id/fd_photos_swipes_rl"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/photos"
+                    android:textColor="@color/facebookBlue"
+                    style="@style/TextStyle20"
+                    android:drawableStart="@drawable/ic_camera_fd"
+                    android:gravity="center_vertical"
+                    android:drawablePadding="@dimen/text_view_padding"
+                    android:layout_marginTop="24dp"
+                    android:paddingTop="3dp"
+                    android:background="@drawable/headers_background"
+                    android:paddingStart="24dp"
+                    android:paddingBottom="3dp"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textAllCaps="true"
+                    tools:ignore="RtlSymmetry" />
+                <!--all photos view-->
+                <LinearLayout
+                    android:id="@+id/fd_photos_ll"
+                    android:layout_below="@+id/fd_photos_tv"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="24dp"
+                    android:paddingTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginEnd="24dp"
+                    android:weightSum="5"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp">
+
+                    <!--pic 1-->
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:layout_weight="1"
+                        android:id="@+id/fd_img1"
+                        android:layout_width="0dp"
+                        android:layout_height="45dp"
+                        android:layout_gravity="center_vertical"
+                        app:civ_border_width="2dp"
+                        android:elevation="@dimen/elevation"
+                        app:civ_border_color="#FD637F"/>
+                    <!--pic 1-->
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/fd_img2"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="45dp"
+                        android:layout_gravity="center_vertical"
+                        app:civ_border_width="2dp"
+                        app:civ_border_color="#FD637F"/>
+                    <!--pic 1-->
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/fd_img3"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="45dp"
+                        android:layout_gravity="center_vertical"
+                        app:civ_border_width="2dp"
+                        app:civ_border_color="#FD637F"/>
+                    <!--pic 1-->
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/fd_img4"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="45dp"
+                        android:layout_gravity="center_vertical"
+                        app:civ_border_width="2dp"
+                        app:civ_border_color="#FD637F"/>
+                    <!--pic 1-->
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/fd_img5"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="45dp"
+                        android:layout_gravity="center_vertical"
+                        app:civ_border_width="2dp"
+                        app:civ_border_color="#FD637F"/>
+
+                </LinearLayout>
+
+
+                <!--about-->
+                <TextView
+                    android:id="@+id/fd_intro_tv"
+                    android:layout_below="@+id/fd_photos_ll"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/intro"
+                    android:textColor="@color/facebookBlue"
+                    style="@style/TextStyle20"
+                    android:drawableStart="@drawable/ic_intro"
+                    android:gravity="center_vertical"
+                    android:drawablePadding="@dimen/text_view_padding"
+                    android:layout_marginTop="24dp"
+                    android:paddingStart="24dp"
+                    android:textStyle="bold"
+                    android:textAllCaps="true"
+                    android:paddingTop="3dp"
+                    android:background="@drawable/headers_background"
+                    android:paddingBottom="3dp"
+                    android:textSize="18sp"
+                    tools:ignore="RtlSymmetry" />
+
+
+                    <TextView
+                        android:id="@+id/fd_about"
+                        android:layout_below="@+id/fd_intro_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/text_view_padding"
+                        style="@style/TextStyle16"
+                        android:textStyle="normal"
+                        android:textColor="@color/black"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginTop="18dp"
+                        />
+
+
+                <!--interests-->
+                <TextView
+                    android:id="@+id/fd_interests_tv"
+                    android:layout_below="@+id/fd_about"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text= "@string/interests"
+                    android:textColor="@color/facebookBlue"
+                    style="@style/TextStyle20"
+                    android:drawableStart="@drawable/ic_interests"
+                    android:gravity="center_vertical"
+                    android:drawablePadding="@dimen/text_view_padding"
+                    android:layout_marginTop="24dp"
+                    android:textStyle="bold"
+                    android:textAllCaps="true"
+                    android:paddingTop="3dp"
+                    android:background="@drawable/headers_background"
+                    android:paddingStart="24dp"
+                    android:paddingBottom="3dp"
+                    android:textSize="18sp"
+                    tools:ignore="RtlSymmetry" />
+
+                <com.cunoraz.tagview.TagView
+                    xmlns:tagview="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/tag_group"
+                    android:layout_below="@+id/fd_interests_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginEnd="24dp"
+                    tagview:lineMargin="5dp"
+                    tagview:tagMargin="5dp"
+                    tagview:textPaddingLeft="12dp"
+                    tagview:textPaddingTop="8dp"
+                    tagview:textPaddingRight="12dp"
+                    tagview:textPaddingBottom="8dp" />
+
+
+                <!--about-->
+                <TextView
+                    android:id="@+id/fd_profile_tv"
+                    android:layout_below="@+id/tag_group"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/about"
+                    android:textColor="@color/facebookBlue"
+                    style="@style/TextStyle20"
+                    android:drawableStart="@drawable/ic_boy"
+                    android:gravity="center_vertical"
+                    android:drawablePadding="@dimen/text_view_padding"
+                    android:layout_marginTop="24dp"
+                    android:textStyle="bold"
+                    android:paddingTop="3dp"
+                    android:background="@drawable/headers_background"
+                    android:paddingStart="24dp"
+                    android:textAllCaps="true"
+                    android:paddingBottom="3dp"
+                    android:textSize="18sp"
+                    tools:ignore="RtlSymmetry" />
+                <!--profile data-->
+                <RelativeLayout
+                    android:layout_below="@+id/fd_profile_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginEnd="24dp"
+                    android:layout_marginBottom="30dp"
+                    >
+
+                    <!--age-->
+                    <TextView
+                        android:id="@+id/fd_age_tv1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Age: "
+                        style="@style/TextStyle14Login"
+                        android:textColor="@color/gray"
+                        android:drawablePadding="3dp"
+                        android:gravity="center_vertical"
+                        android:drawableStart="@drawable/ic_age_mini"
+                        android:layout_marginStart="2dp"
+                        tools:ignore="HardcodedText" />
+                    <TextView
+                        android:id="@+id/fd_age_tv"
+                        android:layout_width="match_parent"
+                        android:gravity="end"
+                        android:layout_height="wrap_content"
+                        style="@style/TextStyle14Login"
+                        android:layout_marginStart="112dp"
+                        android:layout_marginEnd="2dp"
+                        />
+                    <TextView
+                        android:id="@+id/fd_divider1"
+                        android:layout_marginTop="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/black10"
+                        android:layout_below="@+id/fd_age_tv"
+                        />
+
+                    <!--height-->
+                    <TextView
+                        android:id="@+id/fd_height_tv1"
+                        android:layout_below="@+id/fd_divider1"
+                        android:layout_marginTop="8dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Height: "
+                        style="@style/TextStyle14Login"
+                        android:textColor="@color/gray"
+                        android:drawablePadding="3dp"
+                        android:gravity="center_vertical"
+                        android:drawableStart="@drawable/ic_height"
+                        android:layout_marginStart="2dp"
+                        tools:ignore="HardcodedText" />
+                    <TextView
+                        android:id="@+id/fd_height_tv"
+                        android:layout_alignTop="@+id/fd_height_tv1"
+                        android:layout_width="match_parent"
+                        android:gravity="center_vertical|end"
+                        android:layout_height="wrap_content"
+                        style="@style/TextStyle14Login"
+                        android:layout_marginStart="112dp"
+                        android:layout_marginEnd="2dp"
+                        />
+
+                    <TextView
+                        android:id="@+id/fd_divider2"
+                        android:layout_marginTop="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/black10"
+                        android:layout_below="@+id/fd_height_tv"
+                        />
+
+                    <!--religion-->
+                    <RelativeLayout
+                        android:id="@+id/fd_religion_rl"
+                        android:layout_below="@+id/fd_divider2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:id="@+id/fd_religion_tv1"
+                            android:layout_marginTop="8dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Religion: "
+                            style="@style/TextStyle14Login"
+                            android:textColor="@color/gray"
+                            android:drawablePadding="3dp"
+                            android:gravity="center_vertical"
+                            android:layout_marginStart="2dp"
+                            android:drawableStart="@drawable/ic_religion_mini"
+                            tools:ignore="HardcodedText" />
+                        <TextView
+                            android:id="@+id/fd_religion_tv"
+                            android:layout_alignTop="@+id/fd_religion_tv1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="end"
+                            style="@style/TextStyle14Login"
+                            android:layout_marginEnd="2dp"
+                            android:layout_marginStart="112dp"
+                            />
+                        <TextView
+                            android:id="@+id/fd_divider3"
+                            android:layout_marginTop="5dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/black10"
+                            android:layout_below="@+id/fd_religion_tv"
+                            />
+                    </RelativeLayout>
+
+
+                    <!--school-->
+                    <RelativeLayout
+                        android:id="@+id/fd_school_rl"
+                        android:layout_below="@+id/fd_religion_rl"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:id="@+id/fd_school_tv1"
+                            android:layout_marginTop="8dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Education: "
+                            style="@style/TextStyle14Login"
+                            android:textColor="@color/gray"
+                            android:drawablePadding="3dp"
+                            android:gravity="center_vertical"
+                            android:layout_marginStart="2dp"
+                            android:drawableStart="@drawable/ic_school_mini"
+                            tools:ignore="HardcodedText" />
+                        <TextView
+                            android:id="@+id/fd_school_tv"
+                            android:layout_alignTop="@+id/fd_school_tv1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            style="@style/TextStyle14Login"
+                            android:gravity="end"
+                            android:layout_marginEnd="2dp"
+                            android:layout_marginStart="112dp"
+                            />
+                        <TextView
+                            android:id="@+id/fd_divider4"
+                            android:layout_marginTop="5dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/black10"
+                            android:layout_below="@+id/fd_school_tv"
+                            />
+                    </RelativeLayout>
+
+                    <!--career-->
+                    <RelativeLayout
+                        android:id="@+id/fd_career_rl"
+                        android:layout_below="@+id/fd_school_rl"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:id="@+id/fd_career_tv1"
+                            android:layout_marginTop="8dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Career: "
+                            style="@style/TextStyle14Login"
+                            android:textColor="@color/gray"
+                            android:drawablePadding="3dp"
+                            android:gravity="center_vertical"
+                            android:layout_marginStart="2dp"
+                            android:drawableStart="@drawable/ic_career"
+                            tools:ignore="HardcodedText" />
+                        <TextView
+                            android:id="@+id/fd_career_tv"
+                            android:layout_alignTop="@+id/fd_career_tv1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            style="@style/TextStyle14Login"
+                            android:gravity="end"
+                            android:layout_marginEnd="2dp"
+                            android:layout_marginStart="112dp"
+                            />
+                        <TextView
+                            android:id="@+id/fd_divider5"
+                            android:layout_marginTop="5dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/black10"
+                            android:layout_below="@+id/fd_career_tv"
+                            />
+                    </RelativeLayout>
+
+                    <!--zodiac-->
+                    <RelativeLayout
+                        android:id="@+id/fd_zodiac_rl"
+                        android:layout_below="@+id/fd_career_rl"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:id="@+id/fd_zodiac_tv1"
+                            android:layout_marginTop="8dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Zodiac: "
+                            style="@style/TextStyle14Login"
+                            android:textColor="@color/gray"
+                            android:drawablePadding="3dp"
+                            android:gravity="center_vertical"
+                            android:layout_marginStart="2dp"
+                            android:drawableStart="@drawable/ic_zodiac_mini"
+                            tools:ignore="HardcodedText" />
+                        <TextView
+                            android:id="@+id/fd_zodiac_tv"
+                            android:layout_alignTop="@+id/fd_zodiac_tv1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            style="@style/TextStyle14Login"
+                            android:layout_marginStart="112dp"
+                            android:gravity="end"
+                            android:drawablePadding="4dp"
+                            android:layout_marginEnd="2dp"
+                            />
+                        <TextView
+                            android:id="@+id/fd_divider6"
+                            android:layout_marginTop="5dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/black10"
+                            android:layout_below="@+id/fd_zodiac_tv"
+                            />
+                    </RelativeLayout>
+
+                    <!--body type-->
+                    <RelativeLayout
+                        android:layout_below="@+id/fd_zodiac_rl"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:id="@+id/fd_body_type_tv1"
+                            android:layout_marginTop="8dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Body Type: "
+                            style="@style/TextStyle14Login"
+                            android:textColor="@color/gray"
+                            android:drawablePadding="3dp"
+                            android:gravity="center_vertical"
+                            android:drawableStart="@drawable/ic_body_mini"
+                            tools:ignore="HardcodedText" />
+                        <TextView
+                            android:id="@+id/fd_body_type_tv"
+                            android:gravity="end"
+                            android:layout_alignTop="@+id/fd_body_type_tv1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            style="@style/TextStyle14Login"
+                            android:layout_marginStart="112dp"
+                            />
+                    </RelativeLayout>
+
+                </RelativeLayout>
+            </RelativeLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+            </android.support.v7.widget.CardView>
+        </RelativeLayout>
+
+
+        <!--super like layout-->
+        <RelativeLayout
+            android:id="@+id/fd_super_like_rl"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/black90"
+            android:visibility="gone"
+            >
+
+            <pl.droidsonroids.gif.GifImageView
+                android:layout_width="192dp"
+                android:layout_height="192dp"
+                android:background="@drawable/ic_super_like_new_"
+                android:layout_centerInParent="true"
+                />
+
+        </RelativeLayout>
+
+    </android.support.design.widget.CoordinatorLayout>
+
+</RelativeLayout>

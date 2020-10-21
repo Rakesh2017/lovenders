@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/pullToRefresh"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:attribute="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    tools:context=".Chatting">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <RelativeLayout
+        android:id="@+id/fragment_container_chatting"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+    <!--match-->
+    <TextView
+        android:id="@+id/cx_match_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/matches"
+        android:textColor="@color/facebookBlue"
+        style="@style/TextStyle20"
+        android:drawableStart="@drawable/ic_heart_four"
+        android:gravity="center_vertical"
+        android:drawablePadding="@dimen/text_view_padding"
+        android:layout_marginTop="24dp"
+        android:paddingTop="3dp"
+        android:background="@drawable/headers_background"
+        android:paddingStart="24dp"
+        android:paddingBottom="3dp"
+        android:textSize="20sp"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        tools:ignore="RtlSymmetry" />
+
+        <!--matches-->
+        <RelativeLayout
+            android:id="@+id/cx_matches_rl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cx_match_tv"
+            android:layout_marginTop="24dp"
+            >
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/cx_recycler_view_match"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                />
+
+            <com.github.ybq.android.spinkit.SpinKitView
+                android:id="@+id/cx_spin_kit_match"
+                style="@style/SpinKitView.Small.Circle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:visibility="gone"
+                app:SpinKit_Color="@color/black" />
+
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/cx_no_match_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/no_matches_right_now"
+                style="@style/TextStyle16"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:drawableStart="@drawable/ic_no_match"
+                android:textColor="#82240B"
+                android:drawablePadding="12dp"
+                android:gravity="center_vertical"
+                />
+
+        </RelativeLayout>
+
+
+
+    <!--messages-->
+    <TextView
+        android:id="@+id/cx_messages_tv"
+        android:layout_below="@+id/cx_matches_rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/messages"
+        android:textColor="@color/facebookBlue"
+        style="@style/TextStyle20"
+        android:drawableStart="@drawable/ic_message"
+        android:gravity="center_vertical"
+        android:drawablePadding="@dimen/text_view_padding"
+        android:layout_marginTop="24dp"
+        android:paddingTop="3dp"
+        android:background="@drawable/headers_background"
+        android:paddingStart="24dp"
+        android:paddingBottom="3dp"
+        android:textSize="20sp"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        tools:ignore="RtlSymmetry" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/cx_messages_tv"
+        >
+
+        <RelativeLayout
+            android:id="@+id/cx_no_message_rl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="visible"
+            >
+            <ImageView
+                android:id="@+id/cx_no_message"
+                android:layout_width="122dp"
+                android:layout_height="122dp"
+                android:background="@drawable/no_message"
+                android:layout_centerHorizontal="true"
+                tools:ignore="ContentDescription" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No Messages Right Now!"
+                android:layout_below="@+id/cx_no_message"
+                style="@style/TextStyle16"
+                android:textColor="@color/appColor"
+                android:layout_marginTop="12dp"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_centerHorizontal="true"
+                tools:ignore="HardcodedText" />
+
+        </RelativeLayout>
+
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/cx_recycler_view_messages"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            />
+
+        <com.github.ybq.android.spinkit.SpinKitView
+            android:id="@+id/cx_spin_kit_chat"
+            style="@style/SpinKitView.Small.Circle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="gone"
+            app:SpinKit_Color="@color/black" />
+
+    </RelativeLayout>
+
+    <!--pro activation user layout-->
+    <RelativeLayout
+        android:id="@+id/cx_become_pro_rl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/pro_back"
+        android:scaleType="centerCrop"
+        android:clickable="true"
+        android:focusable="true"
+        android:visibility="visible"
+        >
+        <!--diamond-->
+        <ImageView
+            android:id="@+id/cx_diamond"
+            android:layout_width="92dp"
+            android:layout_height="92dp"
+            android:background="@drawable/ic_diamond_white"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="92dp"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/cx_become_pro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/become_a_pro"
+            android:layout_below="@+id/cx_diamond"
+            android:layout_marginTop="16dp"
+            android:layout_centerHorizontal="true"
+            android:textSize="32sp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textAllCaps="true"
+            />
+
+        <RelativeLayout
+            android:layout_below="@+id/cx_become_pro"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/cx_u_likes"
+                android:layout_marginTop="52dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:textSize="14sp"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/unlimited_likes"
+                android:drawableStart="@drawable/ic_unlimited_white"
+                android:drawablePadding="12dp"
+                />
+
+            <TextView
+                android:id="@+id/cx_u_rewinds"
+                android:layout_below="@+id/cx_u_likes"
+                android:layout_marginTop="12dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:textSize="14sp"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/unlimited_rewinds"
+                android:drawableStart="@drawable/ic_unlimited_white"
+                android:drawablePadding="12dp"
+                />
+
+            <TextView
+                android:id="@+id/cx_u_super_likes"
+                android:layout_below="@+id/cx_u_rewinds"
+                android:layout_marginTop="12dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:textSize="14sp"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/unlimited_super_likes"
+                android:drawableStart="@drawable/ic_unlimited_white"
+                android:drawablePadding="12dp"
+                />
+
+            <TextView
+                android:id="@+id/cx_u_messaging"
+                android:layout_below="@+id/cx_u_super_likes"
+                android:layout_marginTop="12dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:textSize="14sp"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/unlimited_instant_messaging"
+                android:drawableStart="@drawable/ic_unlimited_white"
+                android:drawablePadding="12dp"
+                />
+
+            <Button
+                android:id="@+id/cx_activate_pro_b"
+                android:paddingStart="30dp"
+                android:paddingEnd="30dp"
+                android:paddingBottom="7dp"
+                android:paddingTop="7dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edit_profile_ripple_white_background"
+                android:text="@string/become_a_pro_user"
+                android:layout_centerHorizontal="true"
+                style="@style/TextStyle16"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:layout_below="@+id/cx_u_messaging"
+                android:elevation="@dimen/elevation"
+                android:layout_marginTop="52dp"
+                />
+
+            <!--loading-->
+            <com.github.ybq.android.spinkit.SpinKitView
+                android:id="@+id/cx_activate_pro_spin_kit"
+                style="@style/SpinKitView.Large.ChasingDots"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="24dp"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="24dp"
+                android:layout_centerHorizontal="true"
+                android:visibility="gone"
+                app:SpinKit_Color="@color/white" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/background_white_ripple_effect"
+            />
+
+    </RelativeLayout>
+
+    <!--no internet-->
+    <RelativeLayout
+        android:id="@+id/cx_no_internet_rl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:clickable="true"
+        android:focusable="true"
+        android:visibility="gone"
+        >
+
+        <com.mikhaellopez.circularimageview.CircularImageView
+            android:id="@+id/cx_no_internet_image"
+            android:layout_width="122dp"
+            android:layout_height="122dp"
+            android:layout_centerInParent="true"
+            app:civ_border_color="#EEEEEE"
+            android:background="@color/white"
+            attribute:civ_border_width="3dp"
+            app:civ_shadow="true"
+            app:civ_shadow_radius="7"
+            app:civ_shadow_color="@color/red"/>
+
+        <TextView
+            android:id="@+id/cx_oops_tv"
+            android:layout_below="@+id/cx_no_internet_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ooops"
+            style="@style/TextStyle20"
+            android:textSize="24sp"
+            android:gravity="center_horizontal"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_marginEnd="@dimen/activity_horizontal_margin"
+            android:textColor="@color/appColor"
+            android:layout_marginTop="12dp"
+            android:textStyle="bold"
+            />
+        <TextView
+            android:layout_below="@+id/cx_oops_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/no_internet_detected"
+            style="@style/TextStyle20"
+            android:textSize="18sp"
+            android:gravity="center_horizontal"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_marginEnd="@dimen/activity_horizontal_margin"
+            android:textColor="@color/gray"
+            android:layout_marginTop="12dp"
+            />
+
+    </RelativeLayout>
+    </RelativeLayout>
+
+</android.support.v4.widget.SwipeRefreshLayout>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".PreviousProfiles">
+
+    <!--our toolbar -->
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/pp_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:elevation="@dimen/elevation"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <!--back button-->
+            <ImageButton
+                android:id="@+id/pp_back_ib"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_back"
+                android:src="@drawable/ripple_to_buttons_black"
+                android:layout_centerVertical="true"
+                tools:ignore="ContentDescription" />
+
+            <!--edit profile-->
+            <TextView
+                android:layout_centerInParent="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/my_recent_likes"
+                style="@style/TextStyle16"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_centerVertical="true"
+                tools:ignore="RtlSymmetry" />
+        </RelativeLayout>
+    </android.support.v7.widget.Toolbar>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/pp_recyclerView"
+        android:layout_below="@+id/pp_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        />
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/pp_no_match_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="@string/no_recent_likes_available"
+        style="@style/TextStyle16"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:drawableTop="@drawable/ic_no_match_large"
+        android:textColor="#82240B"
+        android:drawablePadding="12dp"
+        android:gravity="center_vertical"
+        />
+
+
+    <com.github.ybq.android.spinkit.SpinKitView
+        android:id="@+id/pp_spin_kit"
+        style="@style/SpinKitView.Small.Circle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        app:SpinKit_Color="@color/black" />
+
+
+
+</RelativeLayout>

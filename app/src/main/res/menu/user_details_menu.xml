@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menu_profile"
+        android:orderInCategory="100"
+        android:title="View Profile"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/menu_send_location"
+        android:orderInCategory="100"
+        android:title="Send Location"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/menu_report"
+        android:orderInCategory="100"
+        android:title="Report"
+        app:showAsAction="never" />
+</menu>

@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:fancy="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    tools:context=".DeleteAccount">
+
+    <!--our toolbar -->
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/dl_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:elevation="@dimen/elevation"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <!--back button-->
+            <ImageButton
+                android:id="@+id/dl_back_ib"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_back"
+                android:src="@drawable/ripple_to_buttons_black"
+                android:layout_centerVertical="true"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:layout_centerInParent="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Delete Account"
+                style="@style/TextStyle16"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_centerVertical="true"
+                tools:ignore="RtlSymmetry" />
+        </RelativeLayout>
+    </android.support.v7.widget.Toolbar>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/dl_toolbar"
+        >
+
+        <!--spinner-->
+        <com.jaredrummler.materialspinner.MaterialSpinner
+            android:id="@+id/dl_spinner"
+            style="@style/TextStyle14Login"
+            android:textColor="@color/white"
+            android:textStyle="normal"
+            app:ms_hide_arrow="false"
+            android:hint="please choose a reason"
+            app:ms_hint_color="@color/white"
+            app:ms_background_color="@color/facebookBlue"
+            app:ms_dropdown_max_height="350dp"
+            app:ms_dropdown_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_below="@+id/dl_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="We are sorry to hear you had like to delete your account."
+            style="@style/TextStyle14Login"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="8dp"
+            />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_below="@+id/textView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="If you are just looking to take break, you can always temporarily hide your profile from settings. "
+            style="@style/TextStyle14Login"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:textStyle="normal"
+            android:textSize="12sp"
+            android:textColor="@color/gray"
+            android:layout_marginEnd="8dp"
+            />
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_below="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Warning: When you delete your account => your all photos, your all profile data, and your all related information will be removed permanently from Lovenders and will not be recoverable in any case. However, in future you can create new account with same login details."
+            style="@style/TextStyle14Login"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:textStyle="normal"
+            android:textSize="12sp"
+            android:layout_marginEnd="8dp"
+            android:textColor="@color/lightCoral"
+            />
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/textView3"
+            >
+            <!--spin kit-->
+            <com.github.ybq.android.spinkit.SpinKitView
+                android:id="@+id/dl_delete_Account_spin_kit"
+                style="@style/SpinKitView.Small.ThreeBounce"
+                android:layout_width="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/dl_img"
+                android:visibility="invisible"
+                android:layout_centerHorizontal="true"
+                app:SpinKit_Color="@color/appColor" />
+
+            <ImageView
+                android:id="@+id/dl_img"
+                android:layout_width="152dp"
+                android:layout_height="152dp"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/delete_account_png"
+                />
+
+            <mehdi.sakout.fancybuttons.FancyButton
+                android:id="@+id/dl_delete_btn"
+                android:layout_width="match_parent"
+                android:layout_below="@+id/dl_img"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:paddingTop="10dp"
+                fancy:fb_defaultColor="#ff5e8a"
+                fancy:fb_focusColor="@color/white"
+                fancy:fb_radius="8dp"
+                fancy:fb_text="Permanently Delete My Account"
+                fancy:fb_textColor="@color/white"
+                android:elevation="@dimen/elevation"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="24dp"
+                />
+
+        </RelativeLayout>
+
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

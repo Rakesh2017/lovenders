@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fancy="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Login">
+
+    <!--background image-->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/pp"
+        android:scaleType="fitCenter"
+        android:scaleX="1.2"
+        tools:ignore="ContentDescription" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        android:text="@string/lovenders"
+        android:letterSpacing="0.3"
+        style="@style/TextStyle14Login"
+        android:textColor="@color/googleRed"
+        android:textSize="42sp"
+        android:textStyle="bold"
+        android:textAllCaps="true"
+        android:layout_centerHorizontal="true"
+        tools:ignore="ContentDescription" />
+
+    <com.facebook.login.widget.LoginButton
+        android:id="@+id/lo_facebook_widget_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp"
+        android:visibility="gone"
+        />
+
+    <!--login modes-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/lo_terms_tv"
+        android:weightSum="3"
+        android:orientation="vertical"
+        >
+
+        <!--fb login-->
+        <mehdi.sakout.fancybuttons.FancyButton
+            android:id="@+id/lo_facebook_fb"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:paddingBottom="10dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingTop="10dp"
+            fancy:fb_defaultColor="@color/facebookBlue"
+            fancy:fb_focusColor="@color/white"
+            fancy:fb_fontIconResource="&#xf09a;"
+            fancy:fb_iconPosition="left"
+            fancy:fb_fontIconSize="20dp"
+            fancy:fb_radius="30dp"
+            fancy:fb_text="     CONTINUE WITH FACEBOOK"
+            android:layout_weight="1"
+            fancy:fb_textColor="@color/white"
+            android:elevation="@dimen/elevation"
+            android:layout_marginEnd="@dimen/activity_horizontal_margin"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            />
+
+
+        <!--google login-->
+        <mehdi.sakout.fancybuttons.FancyButton
+            android:id="@+id/lo_google_fb"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:paddingBottom="10dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingTop="10dp"
+            fancy:fb_defaultColor="@color/googleRed"
+            fancy:fb_focusColor="@color/white"
+            fancy:fb_fontIconResource="&#xf1a0;"
+            fancy:fb_iconPosition="left"
+            fancy:fb_fontIconSize="20dp"
+            fancy:fb_radius="30dp"
+            fancy:fb_text="     CONTINUE WITH GOOGLE"
+            android:layout_weight="1"
+            fancy:fb_textColor="@color/white"
+            android:elevation="@dimen/elevation"
+            android:layout_marginEnd="@dimen/activity_horizontal_margin"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            />
+
+        <!--phone login-->
+        <mehdi.sakout.fancybuttons.FancyButton
+            android:id="@+id/lo_phone_fb"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:paddingBottom="10dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingTop="10dp"
+            fancy:fb_fontIconSize="20dp"
+            fancy:fb_defaultColor="@color/lightGreen"
+            fancy:fb_focusColor="@color/white"
+            fancy:fb_fontIconResource="&#xf095;"
+            fancy:fb_iconPosition="left"
+            fancy:fb_radius="30dp"
+            android:weightSum="1"
+            fancy:fb_text="     CONTINUE WITH PHONE"
+            android:layout_weight="1"
+            fancy:fb_textColor="@color/white"
+            android:elevation="@dimen/elevation"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:layout_marginBottom="32dp"
+            android:layout_marginEnd="@dimen/activity_horizontal_margin"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            />
+
+    </LinearLayout>
+
+
+    <!--terms and conditions-->
+    <TextView
+        android:id="@+id/lo_terms_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/by_clicking_start_you_agree_to_our_terms_and_conditions"
+        style="@style/TextStyle14Login"
+        android:gravity="center_horizontal"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="32dp"
+        android:textColor="@color/white"
+        />
+
+    <!--loading-->
+    <com.github.ybq.android.spinkit.SpinKitView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:visibility="gone"
+        android:id="@+id/lo_spin_kit"
+        style="@style/SpinKitView.Large.ChasingDots"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:padding="12dp"
+        app:SpinKit_Color="@color/white"
+        android:layout_centerInParent="true"
+        />
+
+</RelativeLayout>

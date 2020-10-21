@@ -1,0 +1,121 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.united.lovender"
+        minSdkVersion 21
+        targetSdkVersion 28
+        versionCode 13
+        versionName "1.0.5"
+        multiDexEnabled true
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            debuggable false
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support:design:28.0.0'
+    implementation 'com.android.support:support-vector-drawable:28.0.0'
+    implementation 'com.android.support:palette-v7:28.0.0'
+    implementation 'com.android.support:animated-vector-drawable:28.0.0'
+    implementation 'com.google.android.gms:play-services-auth:16.0.1' // for google login
+    implementation 'com.squareup.picasso:picasso:2.5.2' //picasso
+    implementation 'com.github.bumptech.glide:glide:4.8.0' //glide
+    implementation 'com.google.firebase:firebase-core:16.0.8'
+    implementation 'com.google.firebase:firebase-database:16.1.0'
+    implementation 'com.google.firebase:firebase-auth:16.2.0'
+    implementation 'com.google.firebase:firebase-messaging:17.5.0'
+    implementation 'com.google.firebase:firebase-inappmessaging-display:17.1.1'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
+    implementation 'com.android.support:support-v4:28.0.0'
+    implementation 'com.daimajia.androidanimations:library:2.3@aar'
+    implementation 'com.android.support:support-compat:28.0.0' //yo yo
+    implementation 'com.github.medyo:fancybuttons:1.9.0' //fancy buttons
+    implementation 'com.afollestad.material-dialogs:core:0.9.6.0' // material dialogs
+    implementation 'com.chaos.view:pinview:1.4.1' //otp view
+    implementation 'com.afollestad.material-dialogs:commons:0.9.6.0'
+    implementation 'com.daimajia.easing:library:2.0@aar'
+    implementation 'com.daimajia.androidanimations:library:2.3@aar'
+    implementation 'com.android.support:animated-vector-drawable:28.0.0'
+    implementation 'com.android.support:exifinterface:28.0.0'
+    implementation 'com.android.support:recyclerview-v7:28.0.0'
+    implementation 'com.android.support:cardview-v7:28.0.0'
+    implementation 'com.android.support:support-vector-drawable:28.0.0'
+    implementation 'com.google.android.gms:play-services-maps:16.1.0' // maps
+    implementation 'com.google.android.gms:play-services-places:16.0.0' // places, place picker
+    implementation 'com.google.android.gms:play-services-location:16.0.0' // getting location
+    implementation 'com.github.delight-im:Android-SimpleLocation:v1.0.1' // getting lat long
+    implementation 'de.hdodenhof:circleimageview:2.2.0' // circular image view
+    implementation 'com.github.eralpyucel:CircleProgressView:v1.1' //percentage circular
+    implementation 'com.theartofdev.edmodo:android-image-cropper:2.7.0' //image cropper
+    implementation 'com.daimajia.numberprogressbar:library:1.4@aar' //number progress bar
+    implementation 'pub.devrel:easypermissions:0.3.0' //easy permissions
+    implementation 'com.mcxiaoke.volley:library:1.0.19'
+    implementation 'com.github.joielechong:countrycodepicker:2.2.0'
+    implementation 'com.google.android.gms:play-services-auth:16.0.1'
+    implementation 'com.github.GrenderG:Toasty:1.3.1' // toasty
+    implementation 'com.facebook.android:facebook-android-sdk:4.31.0' // facebook dsk
+    implementation 'com.android.support:support-vector-drawable:28.0.0'
+    implementation 'com.android.support:support-v13:28.0.0'
+    implementation 'com.android.support:animated-vector-drawable:28.0.0'
+    implementation 'com.android.support:customtabs:28.0.0'
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.16' // gif view
+    implementation 'com.daprlabs.aaron:cardstack:0.3.1-beta0' // swipe card
+    implementation 'com.mikhaellopez:circularimageview:3.2.0' // circular image view
+    implementation 'com.github.florent37:materialtextfield:1.0.7'
+    implementation 'com.github.zcweng:switch-button:0.0.3@aar'
+    implementation 'com.github.Jay-Goo:RangeSeekBar:v2.0.4'
+    implementation 'com.jaredrummler:material-spinner:1.2.5' //material spinner
+    implementation 'com.github.ybq:Android-SpinKit:1.2.0' // loading
+    implementation 'org.sufficientlysecure:html-textview:3.6' //html text viewer
+    implementation 'com.kevalpatel2106:ruler-picker:1.1' // height picker slider
+    implementation 'com.github.halysongoncalves:pugnotification:1.8.1'
+    implementation 'com.github.pchmn:MaterialChipsInput:1.0.8'
+    implementation 'com.github.andyxialm:ColorDialog:1.0.0' //lovely dialog
+    implementation 'com.code-troopers.betterpickers:library:3.1.0'
+    implementation 'com.nineoldandroids:library:2.4.0'
+    implementation 'com.daimajia.slider:library:1.1.5@aar'
+    implementation 'com.github.Cutta:TagView:1.3'
+    implementation 'com.skyfishjy.ripplebackground:library:1.0.1' //ripple background
+    implementation 'com.github.varunest:sparkbutton:1.0.6'
+    implementation 'com.google.android.gms:play-services-maps:16.1.0' // maps
+    implementation 'com.google.android.gms:play-services-places:16.0.0' // places, place picker
+    implementation 'com.google.android.gms:play-services-location:16.0.0' // getting location
+    implementation 'com.github.delight-im:Android-SimpleLocation:v1.0.1' // getting lat long
+    implementation 'com.geniusforapp.fancydialog:FancyDialog:0.1.4' // fancy dialog (using)
+    implementation 'com.github.zawadz88:material-activity-chooser:0.2.2'
+    implementation 'com.github.joielechong:countrycodepicker:2.2.0' // country code picker
+    implementation 'com.chaos.view:pinview:1.4.1' //otp view
+    implementation 'com.serhatsurguvec.libraries:continuablecirclecountdownview:1.2' // otp count down
+    implementation 'com.flaviofaria:kenburnsview:1.0.7' // moving profile image
+    implementation 'com.github.wooplr:Spotlight:1.2.3' // tutorial spotlight
+    implementation 'com.scottyab:aescrypt:0.0.1' // encrypt messages
+    implementation 'com.balysv:material-ripple:1.0.2' // material ripple
+    implementation 'com.android.billingclient:billing:1.2.2' // google billing
+    implementation 'me.grantland:autofittextview:0.2.1'
+    implementation 'com.gongwen:swipeback:1.0.2'
+    implementation 'com.github.bluzwong:swipeback:0.2.0@aar'
+    implementation 'com.r0adkll:slidableactivity:2.0.6'
+
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+}
+apply plugin: 'com.google.gms.google-services'

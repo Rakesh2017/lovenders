@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    tools:context=".IntroFragmentTwo">
+
+    <!--interests-->
+    <android.support.v7.widget.CardView
+        android:id="@+id/fi_cv1"
+        android:layout_width="match_parent"
+        android:layout_marginTop="92dp"
+        android:layout_height="wrap_content"
+        app:cardElevation="3dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="3dp"
+        android:background="@color/white"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/fi_body_type_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/my_body_type"
+                style="@style/TextStyle14Login"
+                android:textSize="16sp"
+                android:textColor="@color/facebookBlue"
+                />
+            <EditText
+                android:id="@+id/fi_body_type_et"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/fi_body_type_tv"
+                android:paddingStart="@dimen/text_view_padding"
+                android:paddingTop="@dimen/text_view_padding"
+                android:paddingBottom="@dimen/text_view_padding"
+                android:drawableStart="@drawable/ic_body_type"
+                style="@style/TextStyle16"
+                android:layout_marginTop="24dp"
+                android:textColor="@color/facebookBlue"
+                android:inputType="textCapWords"
+                android:textColorHint="@color/facebookBlue50"
+                android:textStyle="normal"
+                android:clickable="false"
+                android:focusable="false"
+                android:layout_alignBottom="@+id/fi_body_type_spinner"
+                tools:ignore="Autofill,LabelFor,RtlSymmetry" />
+            <!--spinner-->
+            <com.jaredrummler.materialspinner.MaterialSpinner
+                android:id="@+id/fi_body_type_spinner"
+                android:layout_below="@+id/fi_body_type_tv"
+                android:textColor="@color/appColor"
+                android:textStyle="normal"
+                android:layout_toEndOf="@+id/fi_body_type_et"
+                app:ms_hide_arrow="false"
+                style="@style/TextStyle16"
+                app:ms_background_color="@color/white"
+                app:ms_hint="Your Body Type"
+                app:ms_hint_color="@color/black50"
+                app:ms_text_color="@color/topBarColor"
+                app:ms_dropdown_max_height="350dp"
+                app:ms_dropdown_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                />
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+    <!--age-->
+    <android.support.v7.widget.CardView
+        android:id="@+id/fi_cv2"
+        android:layout_below="@+id/fi_cv1"
+        android:layout_width="match_parent"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="24dp"
+        app:cardElevation="3dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="3dp"
+        android:background="@color/white"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/fi_age_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/my_birthday"
+                style="@style/TextStyle14Login"
+                android:textSize="16sp"
+                android:textColor="@color/facebookBlue"
+                />
+            <TextView
+                android:id="@+id/fi_dob_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/fi_age_tv"
+                android:paddingStart="@dimen/text_view_padding"
+                android:paddingTop="@dimen/text_view_padding"
+                android:paddingBottom="@dimen/text_view_padding"
+                style="@style/TextStyle16"
+                android:layout_centerHorizontal="true"
+                android:hint="DD        /       MM      /       YYYY"
+                android:layout_marginTop="24dp"
+                android:textColor="@color/appColor"
+                android:gravity="center_horizontal"
+                android:textColorHint="@color/facebookBlue50"
+                android:textStyle="normal"
+                android:clickable="false"
+                android:focusable="false"
+                tools:ignore="HardcodedText,RtlSymmetry" />
+
+        </RelativeLayout>
+
+
+    </android.support.v7.widget.CardView>
+
+
+    <!--height-->
+    <android.support.v7.widget.CardView
+        android:layout_below="@+id/fi_cv2"
+        android:layout_width="match_parent"
+        android:layout_marginBottom="70dp"
+        android:layout_marginTop="24dp"
+        app:cardElevation="3dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="3dp"
+        android:background="@color/white"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:padding="16dp"
+            android:gravity="center_vertical"
+            >
+            <TextView
+                android:id="@+id/fi_height_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/my_height"
+                style="@style/TextStyle16"
+                android:textSize="16sp"
+                android:textColor="@color/facebookBlue"
+                android:elevation="@dimen/elevation"
+                />
+
+            <TextView
+                android:id="@+id/fi_height_number_tv"
+                style="@style/TextStyle16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:elevation="@dimen/elevation"
+                android:textColor="@color/appColor"
+                android:textStyle="normal"
+                tools:ignore="RelativeOverlap" />
+            <!--height clider-->
+            <com.kevalpatel2106.rulerpicker.RulerValuePicker
+                android:id="@+id/fi_height_range"
+                android:layout_below="@+id/fi_height_tv"
+                android:layout_marginTop="24dp"
+                android:layout_width="match_parent"
+                android:layout_height="74dp"
+                android:background="@color/facebookBlue"
+                app:indicator_color="@android:color/white"
+                app:indicator_interval="14dp"
+                app:indicator_width="2dp"
+                app:max_value="250"
+                app:min_value="75"
+                app:notch_color="@android:color/white"
+                app:ruler_text_size="6sp"/>
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+    <!--next button-->
+    <ImageButton
+        android:id="@+id/fi_next_btn"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:background="@drawable/ic_next_gray"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="6dp"
+        android:layout_marginEnd="12dp"
+        android:elevation="11dp"
+        android:src="@drawable/ripple_to_buttons_black"
+        tools:ignore="ContentDescription" />
+</RelativeLayout>

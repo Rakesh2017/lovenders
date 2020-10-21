@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".LocationFromMap">
+
+    <com.google.android.gms.maps.MapView
+        android:id="@+id/fm_mapview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <TextView
+        android:id="@+id/fm_search_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/TextStyle14Login"
+        android:hint="@string/click_on_map_to_get_location"
+        android:textColorHint="@color/gray"
+        android:background="@drawable/rectangle_map_location_text_view_background"
+        android:padding="10dp"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="7dp"
+        android:layout_marginStart="7dp"
+
+        />
+
+    <!--current location-->
+    <ImageButton
+        android:id="@+id/fm_current_location_ib"
+        android:layout_above="@+id/fm_continue_b"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:background="@drawable/ic_current_location"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="12dp"
+        tools:ignore="ContentDescription" />
+
+    <!--continue button-->
+    <Button
+        android:id="@+id/fm_continue_b"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="@string/send_location"
+        style="@style/TextStyle16"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:enabled="false"
+        android:background="@color/buttonDisabledColor"
+        />
+
+    <!--<TextView-->
+        <!--android:id="@+id/dl_charge_extra_tv"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:background="#90323A44"-->
+        <!--style="@style/CustomTextStyle12"-->
+        <!--android:textSize="14sp"-->
+        <!--android:textColor="@color/white"-->
+        <!--android:text="@string/rs_300_extra_for_car_delivery_and_collection"-->
+        <!--android:gravity="center"-->
+        <!--android:padding="4dp"-->
+        <!--/>-->
+
+    <!--&lt;!&ndash;search edit text&ndash;&gt;-->
+
+    <!--<TextView-->
+        <!--android:id="@+id/dl_search_et"-->
+        <!--android:layout_below="@+id/dl_charge_extra_tv"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--style="@style/CustomTextStyle16"-->
+        <!--android:hint="@string/search_location_here"-->
+        <!--android:textColorHint="@color/gray"-->
+        <!--android:background="@drawable/rectangle_rent_home"-->
+        <!--android:padding="10dp"-->
+        <!--android:drawableStart="@drawable/ic_search"-->
+        <!--android:drawablePadding="@dimen/textViewPadding"-->
+        <!--android:maxLines="1"-->
+        <!--android:singleLine="true"-->
+        <!--android:layout_marginTop="12dp"-->
+        <!--android:layout_marginEnd="7dp"-->
+        <!--android:layout_marginStart="7dp"-->
+        <!--/>-->
+
+    <!--&lt;!&ndash;current location&ndash;&gt;-->
+    <!--<ImageButton-->
+        <!--android:id="@+id/dl_current_location_ib"-->
+        <!--android:layout_above="@+id/dl_continue_b"-->
+        <!--android:layout_width="24dp"-->
+        <!--android:layout_height="24dp"-->
+        <!--android:background="@drawable/ic_current_location"-->
+        <!--android:layout_alignParentEnd="true"-->
+        <!--android:layout_marginEnd="12dp"-->
+        <!--android:layout_marginBottom="12dp"-->
+        <!--android:contentDescription="@string/error_while_loading_image" />-->
+
+    <!--&lt;!&ndash;satellite button&ndash;&gt;-->
+    <!--<ImageButton-->
+        <!--android:id="@+id/dl_satellite_ib"-->
+        <!--android:layout_above="@+id/dl_continue_b"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:background="@drawable/ic_satellite"-->
+        <!--android:layout_marginBottom="12dp"-->
+        <!--android:layout_marginStart="12dp"-->
+        <!--android:contentDescription="@string/error_while_loading_image" />-->
+
+    <!--&lt;!&ndash;terrain button&ndash;&gt;-->
+    <!--<ImageButton-->
+        <!--android:id="@+id/dl_terrain_ib"-->
+        <!--android:layout_above="@+id/dl_continue_b"-->
+        <!--android:layout_toEndOf="@+id/dl_satellite_ib"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:background="@drawable/ic_terrian"-->
+        <!--android:layout_marginBottom="12dp"-->
+        <!--android:layout_marginStart="12dp"-->
+        <!--android:contentDescription="@string/error_while_loading_image" />-->
+
+    <!--&lt;!&ndash;continue button&ndash;&gt;-->
+    <!--<Button-->
+        <!--android:id="@+id/dl_continue_b"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:text="continue"-->
+        <!--android:textColor="@color/white"-->
+        <!--android:textStyle="bold"-->
+        <!--android:gravity="center"-->
+        <!--android:enabled="false"-->
+        <!--android:background="@color/buttonDisabledColor"-->
+        <!--/>-->
+
+
+</RelativeLayout>

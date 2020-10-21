@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    android:isScrollContainer="true"
+    android:id="@+id/fragment_container_feed"
+    xmlns:fancy="http://schemas.android.com/apk/res-auto"
+    xmlns:attribute="http://schemas.android.com/apk/res-auto"
+    tools:context=".Feed">
+
+
+    <!--when no profile left-->
+    <RelativeLayout
+        android:id="@+id/ff_profiles_ended_rl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:visibility="gone"
+        >
+
+    <TextView
+        android:id="@+id/ff_all_caught_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/all_caught_up"
+        style="@style/TextStyle20"
+        android:textSize="32sp"
+        android:textColor="#5CA9FF"
+        android:textStyle="bold"
+        android:drawableTop="@drawable/ic_empty_box"
+        android:layout_centerInParent="true"
+        android:drawablePadding="@dimen/text_view_padding"
+        />
+    <TextView
+        android:layout_below="@+id/ff_all_caught_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="check back soon to \nfind to more people to connect with"
+        style="@style/TextStyle20"
+        android:textSize="18sp"
+        android:gravity="center_horizontal"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"
+        android:textColor="#5CA9FF"
+        android:layout_marginTop="24dp"
+        tools:ignore="HardcodedText" />
+    </RelativeLayout>
+
+
+    <!--no internet-->
+    <RelativeLayout
+        android:id="@+id/ff_no_internet_rl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        >
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/ff_no_internet_image"
+            android:layout_width="122dp"
+            android:layout_height="122dp"
+            android:layout_centerInParent="true"
+            app:civ_border_color="#EEEEEE"
+            android:background="@color/white"
+            attribute:civ_border_width="3dp"
+            />
+
+
+        <TextView
+            android:id="@+id/ff_oops_tv"
+            android:layout_below="@+id/ff_no_internet_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ooops"
+            style="@style/TextStyle20"
+            android:textSize="24sp"
+            android:gravity="center_horizontal"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_marginEnd="@dimen/activity_horizontal_margin"
+            android:textColor="@color/appColor"
+            android:layout_marginTop="12dp"
+            android:textStyle="bold"
+            />
+        <TextView
+            android:layout_below="@+id/ff_oops_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/no_internet_detected"
+            style="@style/TextStyle20"
+            android:textSize="18sp"
+            android:gravity="center_horizontal"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_marginEnd="@dimen/activity_horizontal_margin"
+            android:textColor="@color/gray"
+            android:layout_marginTop="12dp"
+            />
+
+    </RelativeLayout>
+
+
+
+    <!--when loading data-->
+    <com.skyfishjy.library.RippleBackground
+        android:id="@+id/ff_ripple_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        app:rb_color="@color/facebookBlue50"
+        app:rb_radius="36dp"
+        app:rb_rippleAmount="3"
+        app:rb_duration="3000"
+        app:rb_scale="7">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/ff_ripple_image"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:layout_centerInParent="true"
+            />
+    </com.skyfishjy.library.RippleBackground>
+
+
+        <com.daprlabs.cardstack.SwipeFrameLayout xmlns:swipedeck="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <com.daprlabs.cardstack.SwipeDeck
+                android:id="@+id/ff_swipe_deck"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                swipedeck:card_spacing="0dp"
+                swipedeck:max_visible="3"
+                swipedeck:card_gravity="center"
+                swipedeck:rotation_degrees="15"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="4dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="12dp"
+                />
+
+        </com.daprlabs.cardstack.SwipeFrameLayout>
+
+
+    <!--enable location layout-->
+    <RelativeLayout
+        android:id="@+id/ff_enable_location_rl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:background="@color/white"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/enable_location"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="32dp"
+            style="@style/TextStyle16"
+            android:textStyle="bold"
+            android:textSize="24sp"
+            android:textColor="#2ba1cf"
+            android:layout_above="@+id/ff_enable_location_iv"
+            android:layout_marginBottom="92dp"
+            />
+        
+        <ImageView
+            android:id="@+id/ff_enable_location_iv"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:background="@drawable/ic_enable_location"
+            android:layout_centerInParent="true"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/ff_location_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            style="@style/TextStyle14Login"
+            android:gravity="center"
+            android:layout_below="@+id/ff_enable_location_iv"
+            android:layout_marginTop="72dp"
+            android:textColor="#66baed"
+            android:text="We need to know your location to suggest you customized nearby nearby profiles."
+            tools:ignore="HardcodedText" />
+
+        <mehdi.sakout.fancybuttons.FancyButton
+            android:id="@+id/ff_enable_location_fb"
+            android:layout_width="wrap_content"
+            android:layout_below="@+id/ff_location_text"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingTop="10dp"
+            fancy:fb_fontIconSize="20dp"
+            fancy:fb_defaultColor="#66baed"
+            fancy:fb_focusColor="@color/white"
+            fancy:fb_radius="7dp"
+            fancy:fb_text="ENABLE"
+            fancy:fb_textColor="@color/white"
+            android:elevation="@dimen/elevation"
+            android:layout_marginEnd="@dimen/activity_horizontal_margin"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            />
+
+
+    </RelativeLayout>
+
+    <!--enable location layout-->
+
+
+    <!--swipes tutorial-->
+    <ImageView
+        android:id="@+id/ff_right_swipe_iv"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:background="@drawable/ic_swipe_right"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="32dp"
+        android:visibility="gone"
+        tools:ignore="ContentDescription" />
+    <ImageView
+        android:id="@+id/ff_left_swipe_iv"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:visibility="gone"
+        android:background="@drawable/ic_swipe_left"
+        android:layout_centerVertical="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="32dp"
+        tools:ignore="ContentDescription" />
+
+    <!--4 icons-->
+    <!--<LinearLayout-->
+        <!--android:id="@+id/ff_ll"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:background="@color/white"-->
+        <!--android:weightSum="4"-->
+        <!--android:orientation="horizontal"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:divider="@drawable/divider"-->
+        <!--android:showDividers="middle"-->
+        <!--android:paddingBottom="12dp"-->
+        <!--android:visibility="visible"-->
+        <!--android:layout_marginBottom="12dp"-->
+        <!--android:layout_marginStart="4dp"-->
+        <!--android:layout_marginEnd="4dp"-->
+        <!--android:baselineAligned="false">-->
+
+        <!--<RelativeLayout-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_weight="1"-->
+            <!--&gt;-->
+            <!--<ImageView-->
+                <!--android:layout_width="42dp"-->
+                <!--android:layout_height="42dp"-->
+                <!--android:layout_gravity="center_vertical"-->
+                <!--android:layout_centerInParent="true"-->
+                <!--android:background="@drawable/circle_shadow"-->
+                <!--/>-->
+            <!--<ImageButton-->
+                <!--android:id="@+id/ff_rewind_ib"-->
+                <!--android:layout_width="20dp"-->
+                <!--android:layout_height="20dp"-->
+                <!--android:background="@drawable/ic_rewind"-->
+                <!--android:layout_gravity="center_vertical"-->
+                <!--android:layout_centerInParent="true"-->
+                <!--android:elevation="@dimen/elevation"-->
+                <!--tools:ignore="ContentDescription"-->
+                <!--/>-->
+
+        <!--</RelativeLayout>-->
+
+
+        <!--<RelativeLayout-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_weight="1"-->
+            <!--&gt;-->
+            <!--<ImageView-->
+                <!--android:layout_width="42dp"-->
+                <!--android:layout_height="42dp"-->
+                <!--android:layout_gravity="center_vertical"-->
+                <!--android:layout_centerInParent="true"-->
+                <!--android:background="@drawable/circle_shadow"-->
+                <!--/>-->
+            <!--<ImageButton-->
+                <!--android:id="@+id/ff_like_ib"-->
+                <!--android:layout_width="20dp"-->
+                <!--android:layout_height="20dp"-->
+                <!--android:background="@drawable/ic_heart"-->
+                <!--android:layout_gravity="center_vertical"-->
+                <!--android:layout_centerInParent="true"-->
+                <!--android:elevation="@dimen/elevation"-->
+                <!--tools:ignore="ContentDescription"-->
+                <!--/>-->
+
+        <!--</RelativeLayout>-->
+
+        <!--<RelativeLayout-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_weight="1"-->
+            <!--&gt;-->
+            <!--<ImageView-->
+                <!--android:layout_width="42dp"-->
+                <!--android:layout_height="42dp"-->
+                <!--android:layout_gravity="center_vertical"-->
+                <!--android:layout_centerInParent="true"-->
+                <!--android:background="@drawable/circle_shadow"-->
+                <!--/>-->
+            <!--<ImageButton-->
+                <!--android:id="@+id/ff_super_like_ib"-->
+                <!--android:layout_width="20dp"-->
+                <!--android:layout_height="20dp"-->
+                <!--android:background="@drawable/ic_star_three"-->
+                <!--android:layout_gravity="center_vertical"-->
+                <!--android:layout_centerInParent="true"-->
+                <!--android:elevation="@dimen/elevation"-->
+                <!--tools:ignore="ContentDescription"-->
+                <!--/>-->
+
+        <!--</RelativeLayout>-->
+
+        <!--<RelativeLayout-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_weight="1"-->
+            <!--&gt;-->
+            <!--<ImageView-->
+                <!--android:layout_width="42dp"-->
+                <!--android:layout_height="42dp"-->
+                <!--android:layout_gravity="center_vertical"-->
+                <!--android:layout_centerInParent="true"-->
+                <!--android:background="@drawable/circle_shadow"-->
+                <!--/>-->
+            <!--<ImageButton-->
+                <!--android:id="@+id/ff_share_ib"-->
+                <!--android:layout_width="20dp"-->
+                <!--android:layout_height="20dp"-->
+                <!--android:background="@drawable/ic_share"-->
+                <!--android:layout_gravity="center_vertical"-->
+                <!--android:layout_centerInParent="true"-->
+                <!--android:elevation="@dimen/elevation"-->
+                <!--tools:ignore="ContentDescription"-->
+                <!--/>-->
+
+        <!--</RelativeLayout>-->
+    <!--</LinearLayout>-->
+
+</RelativeLayout>

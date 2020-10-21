@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    tools:context=".IntroFragmentOne">
+
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <!--relative 1-->
+        <android.support.v7.widget.CardView
+            android:id="@+id/fo_cv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            app:cardCornerRadius="7dp"
+            android:layout_centerHorizontal="true"
+            app:cardBackgroundColor="@color/edit_profile_background_color"
+            >
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/upload_image_placeholder"
+                >
+
+                <!--plus-->
+                <ImageButton
+                    android:id="@+id/fo_plus_1_ib"
+                    android:layout_width="92dp"
+                    android:layout_height="92dp"
+                    android:background="@drawable/ic_plus"
+                    android:layout_centerInParent="true"
+                    tools:ignore="ContentDescription" />
+
+                <!--image 1-->
+                <ImageView
+                    android:id="@+id/fo_profile_image_ci"
+                    android:layout_width="150dp"
+                    android:layout_height="190dp"
+                    android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true"
+                    android:scaleType="centerCrop"
+                    tools:ignore="ContentDescription" />
+
+
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+
+
+        <EditText
+            android:id="@+id/fo_name_tv"
+            android:layout_below="@+id/fo_cv"
+            android:layout_marginTop="24dp"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/TextStyle16"
+            android:textSize="20sp"
+            android:fontFamily="@font/francois"
+            android:textColor="@color/facebookBlue"
+            android:textStyle="bold"
+            android:hint="@string/username"
+            android:inputType="textCapWords|textPersonName"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:textColorHint="@color/facebookBlue50"
+            android:layout_centerHorizontal="true"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:maxLines="1"
+            android:maxLength="24"
+            tools:ignore="Autofill" />
+
+    <!--gender-->
+    <RelativeLayout
+        android:layout_below="@+id/fo_name_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        android:layout_centerHorizontal="true"
+        >
+        <!--male-->
+       <RelativeLayout
+           android:id="@+id/fo_male_rl"
+           android:layout_width="112dp"
+           android:layout_height="112dp"
+           android:padding="32dp"
+           android:background="@drawable/border_white_background"
+           >
+           <ImageView
+               android:id="@+id/fo_male_iv"
+               android:layout_width="48dp"
+               android:layout_height="48dp"
+               android:layout_centerInParent="true"
+               android:background="@drawable/ic_male"
+               tools:ignore="ContentDescription" />
+       </RelativeLayout>
+
+        <!--female-->
+        <RelativeLayout
+            android:id="@+id/fo_female_rl"
+            android:layout_toEndOf="@+id/fo_male_rl"
+            android:layout_marginStart="24dp"
+            android:layout_width="112dp"
+            android:layout_height="112dp"
+            android:padding="32dp"
+            android:background="@drawable/border_white_background"
+            >
+            <ImageView
+                android:id="@+id/fo_female_iv"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/ic_female"
+                />
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+    </RelativeLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+    <!--next button-->
+    <ImageButton
+        android:id="@+id/fo_next_btn"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:background="@drawable/ic_next_gray"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="6dp"
+        android:layout_marginEnd="12dp"
+        android:src="@drawable/ripple_to_buttons_black"
+        tools:ignore="ContentDescription" />
+
+
+</RelativeLayout>

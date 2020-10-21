@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--hastag name-->
+    <TextView
+        android:id="@+id/ae_hastag_name_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/TextStyle14Login"
+        android:textStyle="bold"
+        android:textColor="@color/facebookBlue"
+        tools:ignore="RelativeOverlap" />
+
+    <!--cancel button-->
+    <ImageButton
+        android:id="@+id/ae_hastag_cancel_btn"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:background="@drawable/ic_cancel_image"
+        android:layout_alignParentEnd="true"
+        tools:ignore="ContentDescription" />
+
+
+</RelativeLayout>

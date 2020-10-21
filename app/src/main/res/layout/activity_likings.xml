@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".Likings">
+
+    <!--our toolbar -->
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/li_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:elevation="@dimen/elevation"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <!--back button-->
+            <ImageButton
+                android:id="@+id/li_back_ib"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_back"
+                android:backgroundTint="@color/black"
+                android:layout_centerVertical="true"
+                tools:ignore="ContentDescription" />
+
+            <!--edit profile-->
+            <TextView
+                android:layout_centerInParent="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/likings"
+                style="@style/TextStyle16"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_centerVertical="true"
+                tools:ignore="RtlSymmetry" />
+        </RelativeLayout>
+    </android.support.v7.widget.Toolbar>
+
+
+    <com.pchmn.materialchips.ChipsInput
+        android:id="@+id/li_chips_input"
+        android:layout_below="@+id/li_toolbar"
+        android:background="@color/whiteSmoke"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:hint="Enter your liking and press space"
+        app:hintColor="@color/black90"
+        app:textColor="@color/black"
+        app:chip_labelColor="@color/white"
+        app:chip_hasAvatarIcon="false"
+        app:chip_backgroundColor="@color/facebookBlue"
+        app:chip_deletable="true"
+        app:showChipDetailed="false"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        app:maxRows="15"
+        app:chip_deleteIconColor="@color/white"
+        app:filterable_list_backgroundColor="@color/white"
+        app:filterable_list_textColor="@color/facebookBlue"
+        />
+
+    <!--update-->
+    <Button
+        android:id="@+id/li_update_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/facebookBlue"
+        android:text="@string/update"
+        android:textStyle="bold"
+        />
+
+    <!--loading-->
+    <com.github.ybq.android.spinkit.SpinKitView
+        android:id="@+id/li_spin_kit"
+        style="@style/SpinKitView.Large.DoubleBounce"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        app:SpinKit_Color="@color/facebookBlue" />
+
+</RelativeLayout>

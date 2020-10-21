@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/tProfileColor"
+    android:id="@+id/fragment_container_profile"
+    tools:context=".Profile">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/fp_cardView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardElevation="16dp"
+        android:layout_marginBottom="192dp"
+        >
+
+    <RelativeLayout
+        android:id="@+id/fp_rl1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <com.flaviofaria.kenburnsview.KenBurnsView
+            android:id="@+id/fp_profile_image_ci"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+             />
+
+        <!--blackish-->
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/black_offset"
+            tools:ignore="ContentDescription" />
+
+        <!--previous profiles-->
+        <ImageView
+            android:id="@+id/fp_previous_profiles"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:background="@drawable/ic_previous_profiles"
+            tools:ignore="ContentDescription"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="16dp"
+            />
+
+        <!--total swipes-->
+        <TextView
+            android:id="@+id/fp_total_swipes"
+            android:layout_toLeftOf="@+id/fp_previous_profiles"
+            android:layout_width="wrap_content"
+            android:layout_height="38dp"
+            android:gravity="center_vertical"
+            android:paddingStart="7dp"
+            android:paddingEnd="7dp"
+            android:background="@drawable/ic_swipe_background"
+            tools:ignore="ContentDescription,RelativeOverlap,RtlHardcoded"
+            android:layout_marginEnd="24dp"
+            android:layout_marginTop="16dp"
+            android:textSize="18sp"
+            style="@style/TextStyle14Login"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:drawableEnd="@drawable/ic_my_swipes"
+            android:drawablePadding="5dp"
+            />
+
+        <!--camera upload images-->
+        <ImageButton
+            android:id="@+id/fp_upload_images_ib"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:background="@drawable/ic_camera_light_color"
+            tools:ignore="ContentDescription,RelativeOverlap,RtlHardcoded"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:textSize="18sp"
+            style="@style/TextStyle14Login"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:src="@drawable/ripple_to_buttons_white"
+            android:drawableEnd="@drawable/ic_my_swipes"
+            />
+
+        <!--name with age-->
+        <TextView
+            android:id="@+id/fp_user_name_tv"
+            android:layout_marginTop="24dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            style="@style/TextStyle20"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:textAllCaps="true"
+            android:fontFamily="@font/francois"
+            android:layout_above="@+id/fp_about_tv"
+            />
+
+        <!--about-->
+        <TextView
+            android:id="@+id/fp_about_tv"
+            android:layout_marginTop="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            style="@style/TextStyle16"
+            android:gravity="start"
+            android:textColor="@color/whiteSmoke"
+            android:textStyle="normal"
+            android:layout_above="@+id/fp_sp_rl"
+            />
+
+        <!--setting and edit profile-->
+        <RelativeLayout
+            android:id="@+id/fp_sp_rl"
+            android:layout_alignBottom="@+id/fp_profile_image_ci"
+            android:layout_marginTop="32dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="32dp"
+            android:layout_marginBottom="32dp"
+            >
+            <!--setting-->
+            <Button
+                android:id="@+id/fp_settings_b"
+                android:paddingStart="30dp"
+                android:paddingEnd="30dp"
+                android:paddingBottom="7dp"
+                android:paddingTop="7dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edit_profile_ripple_white_background"
+                android:text="@string/settings"
+                style="@style/TextStyle16"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textAllCaps="true"
+                android:elevation="@dimen/elevation"
+                android:layout_marginBottom="@dimen/elevation"
+                android:layout_marginEnd="@dimen/elevation"
+                android:layout_marginTop="@dimen/elevation"
+                />
+
+            <!--edit profile-->
+            <Button
+                android:id="@+id/fp_edit_profile_b"
+                android:paddingStart="30dp"
+                android:paddingEnd="30dp"
+                android:paddingBottom="7dp"
+                android:paddingTop="7dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edit_profile_ripple_white_background"
+                android:text=" PROFILE "
+                style="@style/TextStyle16"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:layout_toEndOf="@+id/fp_settings_b"
+                android:layout_marginStart="52dp"
+                android:elevation="@dimen/elevation"
+                android:textAllCaps="true"
+                android:layout_marginBottom="@dimen/elevation"
+                android:layout_marginEnd="@dimen/elevation"
+                android:layout_marginTop="@dimen/elevation"
+                tools:ignore="HardcodedText" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="192dp"
+        android:layout_alignParentBottom="true"
+        >
+
+        <TextView
+            android:id="@+id/fp_pro_user_status_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/you_are_a_pro_user"
+            android:textAllCaps="true"
+            android:layout_centerInParent="true"
+            style="@style/TextStyle16"
+            android:textSize="18sp"
+            android:textColor="@color/appColor"
+            android:textStyle="bold"
+            android:layout_marginBottom="20dp"
+            android:drawableTop="@drawable/ic_diamond_black"
+            android:visibility="gone"
+            android:drawablePadding="7dp"
+            />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/fp_simple_user_status_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="182dp"
+        android:layout_alignParentBottom="true"
+        >
+        <RelativeLayout
+            android:id="@+id/fp_headings_rl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/fp_selectors_ll"
+            android:layout_marginBottom="8dp"
+            >
+            <TextView
+                android:id="@+id/fp1"
+                android:layout_width="match_parent"
+                android:gravity="center_horizontal"
+                android:layout_height="wrap_content"
+                android:text="@string/unlimited_super_likes"
+                style="@style/TextStyle14Login"
+                android:textStyle="normal"
+                android:textSize="14sp"
+                android:textColor="@color/crispyBlue"
+                android:drawableTop="@drawable/ic_super_like_new_black"
+                android:drawablePadding="12dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginStart="16dp"
+                />
+            <TextView
+                android:id="@+id/fp2"
+                android:layout_width="match_parent"
+                android:gravity="center_horizontal"
+                android:layout_height="wrap_content"
+                android:text="@string/unlimited_rewinds"
+                style="@style/TextStyle14Login"
+                android:textSize="14sp"
+                android:textColor="@color/crispyBlue"
+                android:drawableTop="@drawable/ic_rewind_black"
+                android:drawablePadding="12dp"
+                android:visibility="gone"
+                android:layout_marginEnd="16dp"
+                android:layout_marginStart="16dp"
+                />
+            <TextView
+                android:id="@+id/fp3"
+                android:layout_width="match_parent"
+                android:gravity="center_horizontal"
+                android:layout_height="wrap_content"
+                android:text="@string/unlimited_instant_messaging"
+                style="@style/TextStyle14Login"
+                android:drawableTop="@drawable/ic_messaging_black"
+                android:drawablePadding="12dp"
+                android:textSize="14sp"
+                android:textColor="@color/crispyBlue"
+                android:visibility="gone"
+                android:layout_marginEnd="16dp"
+                android:layout_marginStart="16dp"
+                />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:weightSum="3"
+            android:orientation="horizontal"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="12dp"
+            android:id="@+id/fp_selectors_ll"
+            android:layout_above="@+id/fp_buy_plan_b"
+            android:layout_marginBottom="16dp"
+            >
+
+            <ImageView
+                android:id="@+id/fp_selector1"
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                android:background="@drawable/circle_black"
+                android:layout_weight="1"
+                android:layout_marginEnd="4dp"
+                tools:ignore="ContentDescription" />
+            <ImageView
+                android:id="@+id/fp_selector2"
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                android:background="@drawable/white_circle"
+                android:layout_weight="1"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="4dp"
+                tools:ignore="ContentDescription" />
+            <ImageView
+                android:id="@+id/fp_selector3"
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                android:background="@drawable/white_circle"
+                android:layout_weight="1"
+                android:layout_marginStart="4dp"
+                tools:ignore="ContentDescription" />
+        </LinearLayout>
+
+        <!--setting-->
+        <Button
+            android:id="@+id/fp_buy_plan_b"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edit_profile_ripple_crispy_blue"
+            android:text="@string/become_a_pro_user"
+            style="@style/TextStyle16"
+            android:textSize="14sp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textAllCaps="true"
+            android:layout_alignParentBottom="true"
+            />
+    </RelativeLayout>
+
+
+    <!--loading-->
+    <com.github.ybq.android.spinkit.SpinKitView
+        android:id="@+id/fp_spin_kit"
+        style="@style/SpinKitView.Large.ChasingDots"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="24dp"
+        android:layout_centerHorizontal="true"
+        android:visibility="gone"
+        app:SpinKit_Color="@color/facebookBlue" />
+
+</RelativeLayout>

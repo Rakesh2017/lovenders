@@ -1,0 +1,888 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/whiteSmoke"
+    xmlns:fancy="http://schemas.android.com/apk/res-auto"
+    tools:context=".Settings">
+
+    <!--our toolbar -->
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/as_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:elevation="@dimen/elevation"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <!--back button-->
+            <ImageButton
+                android:id="@+id/as_back_ib"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_back"
+                android:src="@drawable/ripple_to_buttons_black"
+                android:layout_centerVertical="true"
+                tools:ignore="ContentDescription" />
+
+            <!--edit profile-->
+            <TextView
+                android:layout_centerInParent="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/settings"
+                style="@style/TextStyle16"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_centerVertical="true"
+                tools:ignore="RtlSymmetry" />
+        </RelativeLayout>
+    </android.support.v7.widget.Toolbar>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FDFCFC"
+        android:layout_below="@+id/as_toolbar"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#FDFCFC"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            >
+
+            <!--boost and super like-->
+            <LinearLayout
+                android:id="@+id/as_boost_ll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:visibility="gone"
+                >
+                <!--boost-->
+                <android.support.v7.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="3dp"
+                    app:cardElevation="@dimen/elevation"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="@dimen/activity_horizontal_margin"
+                    android:layout_marginTop="@dimen/activity_vertical_margin"
+                    android:layout_marginBottom="@dimen/activity_vertical_margin"
+                    >
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/activity_horizontal_margin"
+                        >
+
+                        <ImageButton
+                            android:id="@+id/as_boost_ib"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:background="@drawable/ic_instagram"
+                            android:elevation="@dimen/elevation"
+                            android:layout_centerHorizontal="true"
+                            tools:ignore="ContentDescription" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/as_boost_ib"
+                            android:layout_centerHorizontal="true"
+                            android:text="@string/connect_instagram"
+                            style="@style/TextStyle14Login"
+                            android:layout_marginTop="12dp"
+                            android:textColor="#FFFF7058"
+                            android:textStyle="bold"
+                            android:elevation="@dimen/elevation"
+                            />
+
+                    </RelativeLayout>
+
+                </android.support.v7.widget.CardView>
+
+                <!--super likes-->
+                <android.support.v7.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="3dp"
+                    app:cardElevation="@dimen/elevation"
+                    android:layout_weight="1"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                    android:layout_marginTop="@dimen/activity_vertical_margin"
+                    android:layout_marginBottom="@dimen/activity_vertical_margin"
+                    >
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/activity_horizontal_margin"
+                        >
+
+                        <ImageButton
+                            android:id="@+id/as_super_likes_ib"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:background="@drawable/ic_star"
+                            android:elevation="@dimen/elevation"
+                            android:layout_centerHorizontal="true"
+                            tools:ignore="ContentDescription" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/as_super_likes_ib"
+                            android:layout_centerHorizontal="true"
+                            android:text="@string/get_super_likes"
+                            style="@style/TextStyle14Login"
+                            android:layout_marginTop="12dp"
+                            android:textColor="#FFE5AA17"
+                            android:textStyle="bold"
+                            android:elevation="@dimen/elevation"
+                            />
+
+                    </RelativeLayout>
+
+                </android.support.v7.widget.CardView>
+            </LinearLayout>
+
+
+            <!--subscription-->
+            <android.support.v7.widget.CardView
+                android:id="@+id/as_subs_cv"
+                android:layout_below="@+id/as_boost_ll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#c7efcf"
+                app:cardBackgroundColor="#c7efcf"
+                app:cardCornerRadius="3dp"
+                android:visibility="gone"
+                app:cardElevation="@dimen/elevation"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                >
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#eef5db"
+                    android:padding="16dp"
+                    >
+                    <me.grantland.widget.AutofitLayout
+                        android:id="@+id/as_subs_afl"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="16dp"
+                        >
+                        <TextView
+                            android:id="@+id/as_subs_tv1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="start"
+                            style="@style/TextStyle16"
+                            android:textColor="@color/facebookBlue"
+                            android:textStyle="bold"
+                            android:textAllCaps="true"
+                            android:layout_toStartOf="@+id/as_subs_iv"
+                            android:maxLines="1"
+                            />
+                    </me.grantland.widget.AutofitLayout>
+
+                    <TextView
+                        android:id="@+id/as_subs_tv"
+                        android:layout_width="match_parent"
+                        android:layout_marginEnd="12dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/as_subs_afl"
+                        android:layout_marginTop="@dimen/activity_vertical_margin"
+                        style="@style/TextStyle14Login"
+                        android:textSize="12sp"
+                        android:textColor="@color/black90"
+                        android:layout_toStartOf="@+id/as_subs_iv"
+                        />
+
+                    <ImageView
+                        android:layout_alignParentEnd="true"
+                        android:id="@+id/as_subs_iv"
+                        android:layout_width="48dp"
+                        android:layout_height="46dp"
+                        tools:ignore="ContentDescription" />
+
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+
+
+
+            <!--signed in with-->
+            <android.support.v7.widget.CardView
+                android:id="@+id/as_signed_in_with_cv"
+                android:layout_below="@+id/as_subs_cv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="3dp"
+                app:cardElevation="@dimen/elevation"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                >
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:padding="16dp"
+                    >
+                    <TextView
+                        android:id="@+id/as_signed_in_with_tv1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/logged_in_with"
+                        style="@style/TextStyle16"
+                        android:textColor="@color/facebookBlue"
+                        android:textStyle="bold"
+                        android:textAllCaps="true"
+                        android:elevation="@dimen/elevation"
+                        />
+
+                    <TextView
+                        android:id="@+id/as_signed_in_with_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/as_signed_in_with_tv1"
+                        android:layout_marginTop="@dimen/activity_vertical_margin"
+                        style="@style/TextStyle14Login"
+                        android:textAllCaps="true"
+                        android:textColor="@color/topBarColor"
+                        />
+
+                    <TextView
+                        android:id="@+id/as_signed_in_with_mode_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/as_signed_in_with_tv"
+                        android:layout_marginTop="12dp"
+                        style="@style/TextStyle14Login"
+                        android:textAllCaps="true"
+                        android:textSize="12sp"
+                        android:textColor="@color/black90"
+                        android:textStyle="normal"
+                        />
+
+                    <ImageView
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/as_signed_in_with_tv1"
+                        android:layout_marginTop="12dp"
+                        android:id="@+id/as_signed_in_with_iv"
+                        android:layout_width="48dp"
+                        android:layout_height="24dp"
+                        tools:ignore="ContentDescription" />
+
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+
+
+            <!--hide profile-->
+            <android.support.v7.widget.CardView
+                android:id="@+id/as_hide_profile_cv"
+                android:layout_below="@+id/as_signed_in_with_cv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="3dp"
+                app:cardElevation="@dimen/elevation"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                >
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:padding="16dp"
+                    >
+                    <TextView
+                        android:id="@+id/as_hide_profile_tv1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/profile_visibility"
+                        style="@style/TextStyle16"
+                        android:textColor="@color/facebookBlue"
+                        android:textStyle="bold"
+                        android:textAllCaps="true"
+                        android:elevation="@dimen/elevation"
+                        />
+                    <!--spin kit-->
+                    <com.github.ybq.android.spinkit.SpinKitView
+                        android:id="@+id/as_spin_kit_hide_profile"
+                        style="@style/SpinKitView.Small.ThreeBounce"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@+id/as_hide_profile_tv1"
+                        android:visibility="gone"
+                        android:layout_marginStart="8dp"
+                        app:SpinKit_Color="@color/facebookBlue" />
+
+
+                    <TextView
+                        android:id="@+id/as_hide_profile_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/visible"
+                        android:layout_below="@+id/as_hide_profile_tv1"
+                        android:layout_marginTop="@dimen/activity_vertical_margin"
+                        style="@style/TextStyle14Login"
+                        android:textAllCaps="true"
+                        android:textColor="@color/topBarColor"
+                        />
+                    <com.suke.widget.SwitchButton
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/as_hide_profile_tv1"
+                        android:layout_marginTop="12dp"
+                        android:id="@+id/as_switch_hide_profile"
+                        android:layout_width="48dp"
+                        android:layout_height="24dp"
+                        app:sb_checked_color="@color/facebookBlue"
+                        app:sb_shadow_effect="true"
+                        app:sb_checked="true"
+                        app:sb_shadow_color="@color/red"
+                        app:sb_checkline_color="@color/transparent"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/you_can_hide_your_profile_from_other_users_however_your_profile_will_be_hidden_but_your_matches_can_still_see_you"
+                        android:layout_below="@+id/as_hide_profile_tv"
+                        android:layout_marginTop="12dp"
+                        style="@style/TextStyle16"
+                        android:textSize="12sp"
+                        android:textColor="@color/black90"
+                        android:textStyle="normal"
+                        />
+
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+
+
+
+            <!--shoe men or women-->
+            <android.support.v7.widget.CardView
+                android:id="@+id/as_show_me_cv"
+                android:layout_below="@+id/as_hide_profile_cv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="3dp"
+                app:cardElevation="@dimen/elevation"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                >
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:padding="16dp"
+                    >
+                    <TextView
+                        android:id="@+id/as_show_me_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/i_am_interested_in"
+                        style="@style/TextStyle16"
+                        android:textColor="@color/facebookBlue"
+                        android:textStyle="bold"
+                        android:textAllCaps="true"
+                        android:elevation="@dimen/elevation"
+                        />
+                    <!--spin kit-->
+                    <com.github.ybq.android.spinkit.SpinKitView
+                        android:id="@+id/as_spin_kit_gender"
+                        style="@style/SpinKitView.Small.ThreeBounce"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@+id/as_show_me_tv"
+                        android:visibility="gone"
+                        android:layout_marginStart="8dp"
+                        app:SpinKit_Color="@color/facebookBlue" />
+
+                    <!--men-->
+                    <TextView
+                        android:id="@+id/as_men_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/men"
+                        android:layout_below="@+id/as_show_me_tv"
+                        android:layout_marginTop="@dimen/activity_vertical_margin"
+                        style="@style/TextStyle14Login"
+                        android:textColor="@color/topBarColor"
+                        />
+                    <com.suke.widget.SwitchButton
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/as_show_me_tv"
+                        android:layout_marginTop="12dp"
+                        android:id="@+id/as_switch_button_men"
+                        android:layout_width="48dp"
+                        android:layout_height="24dp"
+                        app:sb_checked_color="@color/facebookBlue"
+                        app:sb_shadow_effect="true"
+                        app:sb_shadow_color="@color/red"
+                        app:sb_checkline_color="@color/transparent"
+                        />
+                    <!--women-->
+                    <TextView
+                        android:id="@+id/as_women_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/women"
+                        android:layout_below="@+id/as_men_tv"
+                        android:layout_marginTop="@dimen/activity_vertical_margin"
+                        style="@style/TextStyle14Login"
+                        android:textColor="@color/topBarColor"
+                        />
+                    <com.suke.widget.SwitchButton
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/as_men_tv"
+                        android:layout_marginTop="12dp"
+                        android:id="@+id/as_switch_button_women"
+                        android:layout_width="48dp"
+                        android:layout_height="24dp"
+                        app:sb_checked_color="@color/facebookBlue"
+                        app:sb_shadow_effect="true"
+                        app:sb_shadow_color="@color/red"
+                        app:sb_checkline_color="@color/transparent"
+                        />
+
+                    <!--lesbian-->
+                    <TextView
+                        android:id="@+id/as_lesbians_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/lesbians"
+                        android:layout_below="@+id/as_women_tv"
+                        android:layout_marginTop="@dimen/activity_vertical_margin"
+                        style="@style/TextStyle14Login"
+                        android:textAllCaps="true"
+                        android:visibility="gone"
+                        android:textColor="@color/topBarColor"
+                        />
+                    <com.suke.widget.SwitchButton
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/as_women_tv"
+                        android:layout_marginTop="12dp"
+                        android:id="@+id/as_switch_button_lesbians"
+                        android:layout_width="48dp"
+                        android:layout_height="24dp"
+                        app:sb_checked_color="@color/facebookBlue"
+                        app:sb_shadow_effect="true"
+                        app:sb_shadow_color="@color/red"
+                        android:visibility="gone"
+                        app:sb_checkline_color="@color/transparent"
+                        />
+                    <!--gays-->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/gays"
+                        android:layout_below="@+id/as_lesbians_tv"
+                        android:layout_marginTop="@dimen/activity_vertical_margin"
+                        style="@style/TextStyle14Login"
+                        android:textAllCaps="true"
+                        android:visibility="gone"
+                        android:textColor="@color/topBarColor"
+                        />
+                    <com.suke.widget.SwitchButton
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/as_lesbians_tv"
+                        android:layout_marginTop="12dp"
+                        android:id="@+id/as_switch_button_gays"
+                        android:layout_width="48dp"
+                        android:layout_height="24dp"
+                        app:sb_checked_color="@color/facebookBlue"
+                        app:sb_shadow_effect="true"
+                        app:sb_shadow_color="@color/red"
+                        android:visibility="gone"
+                        app:sb_checkline_color="@color/transparent"
+                        />
+
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+
+
+            <!--age-->
+            <android.support.v7.widget.CardView
+                android:id="@+id/ad_age_range_cv"
+                android:layout_below="@+id/as_show_me_cv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="3dp"
+                app:cardElevation="@dimen/elevation"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                >
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:padding="16dp"
+                    >
+                    <!--left and right range-->
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:padding="@dimen/text_view_padding"
+                        >
+                        <!--left range-->
+                        <TextView
+                            android:id="@+id/as_left_age_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="18"
+                            style="@style/TextStyle16"
+                            android:textStyle="bold"
+                            android:textColor="@color/facebookBlue"
+                            android:elevation="@dimen/elevation"
+                            tools:ignore="HardcodedText" />
+                        <ImageButton
+                            android:id="@+id/as_age_hypen"
+                            android:layout_toEndOf="@+id/as_left_age_tv"
+                            android:layout_width="14dp"
+                            android:layout_height="14dp"
+                            android:background="@drawable/ic_hypen"
+                            android:layout_centerInParent="true"
+                            tools:ignore="ContentDescription" />
+                        <!--left range-->
+                        <TextView
+                            android:id="@+id/as_right_age_tv"
+                            android:layout_toEndOf="@+id/as_age_hypen"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="19"
+                            style="@style/TextStyle16"
+                            android:textStyle="bold"
+                            android:textColor="@color/facebookBlue"
+                            android:elevation="@dimen/elevation"
+                            tools:ignore="HardcodedText" />
+
+                    </RelativeLayout>
+                    <TextView
+                        android:id="@+id/as_age_range_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/age_range"
+                        style="@style/TextStyle16"
+                        android:textColor="@color/facebookBlue"
+                        android:textStyle="bold"
+                        android:elevation="@dimen/elevation"
+                        />
+                    <!--spin kit-->
+                    <com.github.ybq.android.spinkit.SpinKitView
+                        android:id="@+id/as_spin_kit_age_range"
+                        style="@style/SpinKitView.Small.ThreeBounce"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@+id/as_age_range_tv"
+                        android:visibility="gone"
+                        android:layout_marginStart="8dp"
+                        app:SpinKit_Color="@color/facebookBlue" />
+
+                    <com.jaygoo.widget.RangeSeekBar
+                        android:id="@+id/as_age_range_sb"
+                        android:layout_below="@+id/as_age_range_tv"
+                        android:layout_marginTop="@dimen/activity_vertical_margin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:rsb_indicator_background_color="@color/facebookBlue"
+                        app:rsb_max="55"
+                        app:rsb_min="18"
+                        app:rsb_progress_color="@color/facebookBlue"
+                        app:rsb_indicator_text_color="@color/black"
+                        app:rsb_mode="range"
+                        app:rsb_indicator_text_size="12sp"
+                        app:rsb_range_interval="1"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/your_feed_will_consist_of_user_profiles_within_the_specified_age_range"
+                        android:layout_below="@+id/as_age_range_sb"
+                        android:layout_marginTop="12dp"
+                        style="@style/TextStyle16"
+                        android:textSize="12sp"
+                        android:textColor="@color/black90"
+                        android:textStyle="normal"
+                        />
+
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <!--distance-->
+            <android.support.v7.widget.CardView
+                android:id="@+id/ad_max_distance_cv"
+                android:layout_below="@+id/ad_age_range_cv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="3dp"
+                app:cardElevation="@dimen/elevation"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                >
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:padding="16dp"
+                    >
+                    <!--age ext-->
+                    <TextView
+                        android:id="@+id/as_max_distance_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/maximum_distance"
+                        style="@style/TextStyle16"
+                        android:textColor="@color/facebookBlue"
+                        android:textStyle="bold"
+                        android:elevation="@dimen/elevation"
+                        android:textAllCaps="true"
+                        />
+                    <!--spin kit-->
+                    <com.github.ybq.android.spinkit.SpinKitView
+                        android:id="@+id/as_spin_kit_max_distance"
+                        style="@style/SpinKitView.Small.ThreeBounce"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@+id/as_max_distance_tv"
+                        android:visibility="gone"
+                        android:layout_marginStart="8dp"
+                        app:SpinKit_Color="@color/facebookBlue" />
+                    <!--number-->
+                    <TextView
+                        android:id="@+id/as_max_distance_number_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="2Km."
+                        style="@style/TextStyle16"
+                        android:textStyle="bold"
+                        android:textColor="@color/facebookBlue"
+                        android:elevation="@dimen/elevation"
+                        android:layout_alignParentEnd="true"
+                        tools:ignore="HardcodedText" />
+                    <com.jaygoo.widget.RangeSeekBar
+                        android:id="@+id/as_max_distance_sb"
+                        android:layout_below="@+id/as_max_distance_tv"
+                        android:layout_marginTop="@dimen/activity_vertical_margin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:rsb_indicator_background_color="@color/facebookBlue"
+                        app:rsb_max="151"
+                        app:rsb_min="2"
+                        app:rsb_progress_color="@color/facebookBlue"
+                        app:rsb_mode="single"
+                        app:rsb_indicator_text_size="12sp"
+                        app:rsb_range_interval="1"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Profiles within the selected range of distance will be visible to you."
+                        android:layout_below="@+id/as_max_distance_sb"
+                        android:layout_marginTop="12dp"
+                        style="@style/TextStyle16"
+                        android:textSize="12sp"
+                        android:textColor="@color/black90"
+                        android:textStyle="normal"
+                        tools:ignore="HardcodedText" />
+
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <!--help and support-->
+            <android.support.v7.widget.CardView
+                android:id="@+id/as_help_cv"
+                android:layout_below="@+id/ad_max_distance_cv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="3dp"
+                app:cardElevation="@dimen/elevation"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                >
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ripple_rect_to_buttons_black"
+                    android:padding="16dp"
+                    >
+                    <TextView
+                        android:id="@+id/as_help_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/help_and_support"
+                        style="@style/TextStyle16"
+                        android:textSize="18sp"
+                        android:textColor="@color/facebookBlue"
+                        android:textStyle="bold"
+                        android:elevation="@dimen/elevation"
+                        android:layout_centerInParent="true"
+                        android:textAllCaps="true"
+                        />
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+
+            <!--distance-->
+            <android.support.v7.widget.CardView
+                android:id="@+id/ad_legal_cv"
+                android:layout_below="@+id/as_help_cv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="3dp"
+                app:cardElevation="@dimen/elevation"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                >
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:padding="16dp"
+                    >
+                    <!--legal-->
+                    <TextView
+                        android:id="@+id/as_legal_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/legal"
+                        style="@style/TextStyle16"
+                        android:textColor="@color/facebookBlue"
+                        android:textStyle="bold"
+                        android:elevation="@dimen/elevation"
+                        android:textAllCaps="true"
+                        />
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/as_legal_recycler_view"
+                        android:layout_below="@+id/as_legal_tv"
+                        android:layout_marginTop="4dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                    <!--spin kit-->
+                    <com.github.ybq.android.spinkit.SpinKitView
+                        android:id="@+id/as_spin_kit_legal"
+                        style="@style/SpinKitView.Small.DoubleBounce"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_centerInParent="true"
+                        android:visibility="gone"
+                        app:SpinKit_Color="@color/facebookBlue" />
+
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <mehdi.sakout.fancybuttons.FancyButton
+                android:id="@+id/as_logout_fb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="12dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:paddingTop="12dp"
+                fancy:fb_borderWidth="1dp"
+                fancy:fb_defaultColor="@color/crispyBlue"
+                fancy:fb_focusColor="@color/white"
+                fancy:fb_text="LOGOUT"
+                fancy:fb_textColor="@color/white"
+                fancy:fb_radius="3dp"
+                fancy:fb_textSize="18sp"
+                android:elevation="1dp"
+                android:layout_marginBottom="@dimen/activity_vertical_margin"
+                android:layout_marginStart="@dimen/activity_vertical_margin"
+                android:layout_marginEnd="@dimen/activity_vertical_margin"
+                android:layout_marginTop="24dp"
+                android:layout_below="@+id/ad_legal_cv"
+                />
+
+            <mehdi.sakout.fancybuttons.FancyButton
+                android:id="@+id/as_delete_account_fb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="12dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:paddingTop="12dp"
+                fancy:fb_borderWidth="1dp"
+                fancy:fb_defaultColor="@color/gray"
+                fancy:fb_focusColor="@color/white"
+                fancy:fb_text="DELETE ACCOUNT"
+                fancy:fb_textColor="@color/white"
+                fancy:fb_radius="3dp"
+                fancy:fb_textSize="18sp"
+                android:elevation="1dp"
+                android:layout_marginBottom="@dimen/activity_vertical_margin"
+                android:layout_marginStart="@dimen/activity_vertical_margin"
+                android:layout_marginEnd="@dimen/activity_vertical_margin"
+                android:layout_below="@+id/as_logout_fb"
+                />
+
+            <ImageView
+                android:id="@+id/as_app_logo"
+                android:layout_width="112dp"
+                android:layout_height="112dp"
+                android:background="@drawable/app_logo_300px"
+                android:elevation="@dimen/elevation"
+                android:layout_below="@+id/as_delete_account_fb"
+                android:layout_marginTop="42dp"
+                android:layout_centerHorizontal="true"
+                tools:ignore="ContentDescription" />
+            
+            <TextView
+                android:id="@+id/ad_version_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Version 1.0.5"
+                android:layout_below="@+id/as_app_logo"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="12dp"
+                style="@style/TextStyle16"
+                android:textColor="@color/black90"
+                android:layout_marginBottom="42dp"
+                android:textStyle="normal"
+                tools:ignore="HardcodedText" />
+
+
+        </RelativeLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+</RelativeLayout>

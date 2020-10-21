@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    app:cardCornerRadius="7dp"
+    app:cardBackgroundColor="@color/white"
+    app:cardElevation="16dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        android:id="@+id/ppx_rl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <!--image-->
+        <ImageView
+            android:id="@+id/ppx_image"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:scaleType="centerCrop"
+            tools:ignore="ContentDescription" />
+
+        <!--blackish-->
+        <com.balysv.materialripple.MaterialRippleLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:mrl_rippleColor="@color/white"
+            app:mrl_rippleRoundedCorners="7dp"
+            >
+        <ImageView
+            android:id="@+id/ppx_image_overlay"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:background="@drawable/black_offset"
+            android:alpha="0.4"
+            tools:ignore="ContentDescription" />
+        </com.balysv.materialripple.MaterialRippleLayout>
+
+        <!--name-->
+        <TextView
+            android:id="@+id/ppx_name"
+            android:layout_width="match_parent"
+            android:gravity="end"
+            android:layout_height="wrap_content"
+            style="@style/TextStyle14Login"
+            android:textColor="@color/white"
+            android:layout_alignBottom="@+id/ppx_image"
+            android:layout_marginBottom="12dp"
+            android:layout_marginStart="12dp"
+            android:textSize="18sp"
+            android:textStyle="normal"
+            android:maxLines="1"
+            android:layout_toStartOf="@+id/ppx_age"
+            android:fontFamily="@font/anton"
+            android:textAllCaps="true"
+            android:transitionName="text"
+            />
+
+        <!--age-->
+        <TextView
+            android:id="@+id/ppx_age"
+            android:layout_alignParentEnd="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/TextStyle14Login"
+            android:textColor="@color/white"
+            android:layout_alignBottom="@+id/ppx_image"
+            android:layout_marginBottom="12dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="12dp"
+            android:textSize="18sp"
+            android:textStyle="normal"
+            android:fontFamily="@font/anton"
+            />
+
+
+        <ImageView
+            android:id="@+id/ppx_like_type"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            tools:ignore="ContentDescription" />
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>

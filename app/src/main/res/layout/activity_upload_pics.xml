@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    tools:context=".UploadPics">
+
+    <!--our toolbar -->
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/up_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:elevation="@dimen/elevation"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <!--back button-->
+            <ImageButton
+                android:id="@+id/up_back_ib"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_back"
+                android:src="@drawable/ripple_to_buttons_black"
+                android:layout_centerVertical="true"
+                tools:ignore="ContentDescription" />
+
+            <!--edit profile-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="@string/your_pics"
+                style="@style/TextStyle16"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_centerInParent="true"
+                tools:ignore="RtlSymmetry" />
+        </RelativeLayout>
+    </android.support.v7.widget.Toolbar>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:layout_below="@+id/up_toolbar"
+        >
+        <!--upload pictures-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/edit_profile_background_color"
+            android:padding="6dp"
+            >
+            <!--first two pics-->
+            <LinearLayout
+                android:id="@+id/up_two_images_ll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:padding="12dp"
+                tools:ignore="DisableBaselineAlignment">
+                <!--relative 1-->
+                <android.support.v7.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="8dp"
+                    app:cardCornerRadius="7dp"
+                    app:cardBackgroundColor="@color/edit_profile_background_color"
+                    >
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/upload_image_placeholder"
+                        >
+                        <!--plus-->
+                        <ImageButton
+                            android:id="@+id/up_plus_1_ib"
+                            android:layout_width="92dp"
+                            android:layout_height="92dp"
+                            android:background="@drawable/ic_plus"
+                            android:layout_centerInParent="true"
+                            tools:ignore="ContentDescription" />
+
+
+                        <!--image 1-->
+                        <ImageView
+                            android:id="@+id/up_upload_image_1_iv"
+                            android:layout_width="match_parent"
+                            android:layout_height="240dp"
+                            android:scaleType="centerCrop"
+                            tools:ignore="ContentDescription" />
+
+                        <ImageButton
+                            android:id="@+id/up_cancel_image_1"
+                            android:layout_width="28dp"
+                            android:layout_height="28dp"
+                            android:background="@drawable/ic_cancel_image"
+                            android:layout_alignEnd="@+id/up_upload_image_1_iv"
+                            android:layout_alignBottom="@+id/up_upload_image_1_iv"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginBottom="8dp"
+                            android:visibility="gone"
+                            tools:ignore="ContentDescription" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/_1"
+                            android:padding="@dimen/text_view_padding"
+                            style="@style/TextStyle20"
+                            android:textColor="@color/white"
+                            android:elevation="@dimen/elevation"
+                            android:textStyle="bold"
+                            />
+                        <!--loading-->
+                        <com.github.ybq.android.spinkit.SpinKitView
+                            android:id="@+id/up_spin_kit_1"
+                            style="@style/SpinKitView.Large.DoubleBounce"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_centerInParent="true"
+                            android:visibility="gone"
+                            app:SpinKit_Color="@color/facebookBlue" />
+                    </RelativeLayout>
+                </android.support.v7.widget.CardView>
+
+                <!--relative 2-->
+                <android.support.v7.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="6dp"
+                    app:cardCornerRadius="7dp"
+                    android:layout_marginStart="8dp"
+                    app:cardBackgroundColor="@color/edit_profile_background_color"
+                    >
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/upload_image_placeholder"
+
+                        >
+                        <!--plus-->
+                        <ImageButton
+                            android:id="@+id/up_plus_2_ib"
+                            android:layout_width="92dp"
+                            android:layout_height="92dp"
+                            android:background="@drawable/ic_plus"
+                            android:layout_centerInParent="true"
+                            tools:ignore="ContentDescription" />
+                        <!--image 2-->
+                        <ImageView
+                            android:id="@+id/up_upload_image_2_iv"
+                            android:layout_width="match_parent"
+                            android:layout_height="240dp"
+                            android:scaleType="centerCrop"
+                            tools:ignore="ContentDescription" />
+
+                        <ImageButton
+                            android:id="@+id/up_cancel_image_2"
+                            android:layout_width="28dp"
+                            android:layout_height="28dp"
+                            android:background="@drawable/ic_cancel_image"
+                            android:layout_alignEnd="@+id/up_upload_image_2_iv"
+                            android:layout_alignBottom="@+id/up_upload_image_2_iv"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginBottom="8dp"
+                            android:visibility="gone"
+                            tools:ignore="ContentDescription" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/_2"
+                            android:padding="@dimen/text_view_padding"
+                            style="@style/TextStyle16"
+                            android:textSize="20sp"
+                            android:textColor="@color/white"
+                            android:elevation="@dimen/elevation"
+                            android:textStyle="bold"
+                            />
+                    </RelativeLayout>
+                </android.support.v7.widget.CardView>
+            </LinearLayout>
+
+            <!--next 3 images-->
+            <LinearLayout
+                android:layout_below="@+id/up_two_images_ll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="3"
+                android:paddingTop="4dp"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:paddingBottom="12dp"
+                tools:ignore="DisableBaselineAlignment">
+                <!--relative 3-->
+                <android.support.v7.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="8dp"
+                    app:cardCornerRadius="7dp"
+                    app:cardBackgroundColor="@color/edit_profile_background_color"
+                    >
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/upload_image_placeholder"
+
+                        >
+                        <!--plus-->
+                        <ImageButton
+                            android:id="@+id/up_plus_3_ib"
+                            android:layout_width="82dp"
+                            android:layout_height="82dp"
+                            android:background="@drawable/ic_plus"
+                            android:layout_centerInParent="true"
+                            tools:ignore="ContentDescription" />
+                        <!--image 3-->
+                        <ImageView
+                            android:id="@+id/up_upload_image_3_iv"
+                            android:layout_width="match_parent"
+                            android:layout_height="150dp"
+                            android:scaleType="centerCrop"
+                            tools:ignore="ContentDescription"
+                            />
+
+                        <ImageButton
+                            android:id="@+id/up_cancel_image_3"
+                            android:layout_width="26dp"
+                            android:layout_height="26dp"
+                            android:background="@drawable/ic_cancel_image"
+                            android:layout_alignEnd="@+id/up_upload_image_3_iv"
+                            android:layout_alignBottom="@+id/up_upload_image_3_iv"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginBottom="8dp"
+                            android:visibility="gone"
+                            tools:ignore="ContentDescription" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/_3"
+                            android:padding="@dimen/text_view_padding"
+                            style="@style/TextStyle16"
+                            android:textSize="20sp"
+                            android:textColor="@color/white"
+                            android:elevation="@dimen/elevation"
+                            android:textStyle="bold"
+                            />
+                    </RelativeLayout>
+                </android.support.v7.widget.CardView>
+                <!--relative 4-->
+                <android.support.v7.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="6dp"
+                    android:layout_marginStart="8dp"
+                    app:cardCornerRadius="7dp"
+                    app:cardBackgroundColor="@color/edit_profile_background_color"
+                    >
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/upload_image_placeholder"
+
+                        >
+                        <!--plus-->
+                        <ImageButton
+                            android:id="@+id/up_plus_4_ib"
+                            android:layout_width="82dp"
+                            android:layout_height="82dp"
+                            android:background="@drawable/ic_plus"
+                            android:layout_centerInParent="true"
+                            tools:ignore="ContentDescription" />
+                        <!--image 4-->
+                        <ImageView
+                            android:id="@+id/up_upload_image_4_iv"
+                            android:layout_width="match_parent"
+                            android:layout_height="150dp"
+                            android:scaleType="centerCrop"
+                            tools:ignore="ContentDescription" />
+
+                        <ImageButton
+                            android:id="@+id/up_cancel_image_4"
+                            android:layout_width="26dp"
+                            android:layout_height="26dp"
+                            android:background="@drawable/ic_cancel_image"
+                            android:layout_alignEnd="@+id/up_upload_image_4_iv"
+                            android:layout_alignBottom="@+id/up_upload_image_4_iv"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginBottom="8dp"
+                            android:visibility="gone"
+                            tools:ignore="ContentDescription" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/_4"
+                            android:padding="@dimen/text_view_padding"
+                            style="@style/TextStyle16"
+                            android:textSize="20sp"
+                            android:textColor="@color/white"
+                            android:elevation="@dimen/elevation"
+                            android:textStyle="bold"
+                            />
+                    </RelativeLayout>
+                </android.support.v7.widget.CardView>
+                <!--relative 5-->
+                <android.support.v7.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="6dp"
+                    android:layout_marginStart="8dp"
+                    app:cardCornerRadius="7dp"
+                    app:cardBackgroundColor="@color/edit_profile_background_color"
+                    >
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/upload_image_placeholder"
+                        >
+
+                        <!--plus-->
+                        <ImageButton
+                            android:id="@+id/up_plus_5_ib"
+                            android:layout_width="82dp"
+                            android:layout_height="82dp"
+                            android:background="@drawable/ic_plus"
+                            android:layout_centerInParent="true"
+                            tools:ignore="ContentDescription" />
+                        <!--image 5-->
+                        <ImageView
+                            android:id="@+id/up_upload_image_5_iv"
+                            android:layout_width="match_parent"
+                            android:layout_height="150dp"
+                            android:scaleType="centerCrop"
+                            tools:ignore="ContentDescription" />
+
+
+                        <ImageButton
+                            android:id="@+id/up_cancel_image_5"
+                            android:layout_width="26dp"
+                            android:layout_height="26dp"
+                            android:background="@drawable/ic_cancel_image"
+                            android:layout_alignEnd="@+id/up_upload_image_5_iv"
+                            android:layout_alignBottom="@+id/up_upload_image_5_iv"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginBottom="8dp"
+                            android:visibility="gone"
+                            tools:ignore="ContentDescription" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/_5"
+                            android:padding="@dimen/text_view_padding"
+                            style="@style/TextStyle16"
+                            android:textSize="20sp"
+                            android:textColor="@color/white"
+                            android:elevation="@dimen/elevation"
+                            android:textStyle="bold"
+                            />
+                    </RelativeLayout>
+                </android.support.v7.widget.CardView>
+            </LinearLayout>
+
+        </RelativeLayout>
+
+
+    </android.support.v4.widget.NestedScrollView>
+
+
+</RelativeLayout>

@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:fancy="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".PhoneLogin">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <!--upper layout-->
+    <RelativeLayout
+        android:id="@+id/pl_rl1"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@color/facebookBlue"
+        >
+
+        <!--back-->
+        <ImageButton
+            android:id="@+id/pl_back_ib"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_left_white_24dp"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            tools:ignore="ContentDescription" />
+
+        <ImageView
+            android:id="@+id/pl_image_iv"
+            android:layout_width="92dp"
+            android:layout_height="92dp"
+            android:layout_centerInParent="true"
+            android:background="@drawable/ic_otp"
+            tools:ignore="ContentDescription" />
+
+    </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/pl_rl1"
+            >
+
+            <!--wrong number-->
+            <TextView
+                android:id="@+id/pl_wrong_number_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:text="@string/reset_if_entered_wrong_number"
+                style="@style/TextStyle14Login"
+                android:textSize="12sp"
+                android:textColor="@color/googleRed"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="7dp"
+                android:visibility="gone"
+                android:gravity="center_vertical"
+                />
+
+
+            <LinearLayout
+                android:id="@+id/pl_linear3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_marginTop="32dp"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                >
+
+                <com.rilixtech.CountryCodePicker
+                    android:id="@+id/ccp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:ccp_backgroundColor="@color/white"
+                    app:ccp_textColor="@color/appColor"
+                    app:ccp_dialogTextColor="@color/appColor"
+                    app:ccp_keyboardAutoPopOnSearch="false"
+                    app:ccp_textSize="16sp"
+                    app:ccp_defaultCode="1"
+                    android:layout_gravity="center_vertical"
+                    />
+
+                <EditText
+                    android:id="@+id/phoneText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/TextStyle16"
+                    android:hint="@string/enter_phone_number"
+                    android:background="@drawable/under_line_textview"
+                    android:padding="10dp"
+                    android:inputType="number"
+                    android:textStyle="bold"
+                    android:maxLength="10"
+                    android:layout_marginStart="@dimen/activity_horizontal_margin"
+                    tools:ignore="Autofill,TextFields" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/pl_linear1"
+                android:layout_below="@+id/pl_linear3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:paddingBottom="7dp"
+                android:paddingTop="7dp"
+                >
+                <!--giving padding to show elevation of buttons-->
+                <mehdi.sakout.fancybuttons.FancyButton
+                    android:id="@+id/sendButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:paddingTop="10dp"
+                    fancy:fb_borderColor="@color/lightGreen"
+                    fancy:fb_borderWidth="1dp"
+                    fancy:fb_defaultColor="@color/lightGreen"
+                    fancy:fb_focusColor="@color/white"
+                    fancy:fb_radius="4dp"
+                    fancy:fb_text="Send OTP  "
+                    fancy:fb_textColor="@color/white"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                    android:elevation="5dp"
+                    tools:targetApi="lollipop"
+                    android:layout_marginBottom="3dp"
+                    android:layout_marginStart="@dimen/activity_horizontal_margin"
+                    />
+
+                <mehdi.sakout.fancybuttons.FancyButton
+                    android:id="@+id/resendButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:paddingTop="10dp"
+                    fancy:fb_borderColor="@color/lightCoral"
+                    fancy:fb_borderWidth="1dp"
+                    fancy:fb_defaultColor="@color/lightCoral"
+                    fancy:fb_focusColor="@color/white"
+                    fancy:fb_radius="4dp"
+                    fancy:fb_text="Resend OTP"
+                    fancy:fb_textColor="@color/white"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                    android:elevation="5dp"
+                    tools:targetApi="lollipop"
+                    />
+
+            </LinearLayout>
+
+
+
+            <!--countdown-->
+            <com.serhatsurguvec.continuablecirclecountdownview.ContinuableCircleCountDownView
+                android:id="@+id/pl_circleCountDownView"
+                android:layout_below="@+id/pl_linear1"
+                android:layout_width="52dp"
+                android:layout_height="52dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                app:shapeRate="15"
+                app:shadowEnabled="false"
+                app:innerColor="@color/white"
+                app:outerColor="@color/white"
+                app:progress="0"
+                app:textColor="#FF000000"
+                app:progressColor="@color/lightGreen"
+                app:textSize="12sp"
+                android:visibility="gone"
+                />
+
+            <!--loading view-->
+            <com.github.ybq.android.spinkit.SpinKitView
+                android:visibility="gone"
+                android:layout_below="@+id/pl_linear1"
+                android:id="@+id/pl_spin_kit"
+                style="@style/SpinKitView.Small.Circle"
+                android:layout_centerInParent="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="8dp"
+                app:SpinKit_Color="@color/black" />
+
+
+            <!--otp sent message-->
+            <TextView
+                android:id="@+id/pl_otp_text"
+                android:layout_below="@+id/pl_circleCountDownView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                style="@style/TextStyle14Login"
+                android:textSize="12sp"
+                android:textColor="@color/gray"
+                android:layout_marginTop="12dp"
+                />
+
+
+            <RelativeLayout
+                android:layout_below="@+id/pl_otp_text"
+                android:id="@+id/pl_otpRelativeLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                >
+
+                <com.chaos.view.PinView
+                    android:id="@+id/codeText"
+                    style="@style/PinWidget.PinView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:cursorVisible="true"
+                    android:inputType="number"
+                    android:itemBackground="@color/whiteSmoke"
+                    android:layout_centerHorizontal="true"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:cursorColor="@color/black"
+                    app:cursorWidth="1dp"
+                    app:itemCount="6"
+                    app:itemHeight="36dp"
+                    app:itemRadius="4dp"
+                    app:itemSpacing="12dp"
+                    app:itemWidth="36dp"
+                    app:lineColor="@color/black10"
+                    app:lineWidth="1dp"
+                    app:viewType="rectangle"
+                    android:layout_marginTop="48dp"
+                    />
+
+
+                <mehdi.sakout.fancybuttons.FancyButton
+                    android:id="@+id/verifyButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/activity_horizontal_margin"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:paddingTop="10dp"
+                    fancy:fb_borderColor="@color/lightGreen"
+                    fancy:fb_borderWidth="1dp"
+                    fancy:fb_defaultColor="@color/lightGreen"
+                    fancy:fb_focusColor="@color/white"
+                    fancy:fb_radius="4dp"
+                    fancy:fb_text="Verify OTP"
+                    fancy:fb_textColor="@color/white"
+                    android:layout_below="@id/codeText"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                    android:layout_marginBottom="24dp"
+                    android:elevation="3dp"
+                    tools:targetApi="lollipop"
+                    />
+
+            </RelativeLayout>
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</android.support.v4.widget.NestedScrollView>

@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:fancy="http://schemas.android.com/apk/res-auto"
+    tools:context=".ShowSubscribed"
+    android:background="@color/white">
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:layout_centerInParent="true"
+        >
+
+        <ImageView
+            android:id="@+id/ss_img"
+            android:layout_width="132dp"
+            android:layout_height="122dp"
+            android:visibility="visible"
+            android:layout_marginTop="32dp"
+            android:layout_centerHorizontal="true"
+            tools:ignore="ContentDescription" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/ss_img"
+        android:layout_marginTop="24dp"
+        android:background="@color/crispyBlue90"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:id="@+id/ss_text"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="YOU ARE A PRO USER NOW"
+        style="@style/TextStyle16"
+        android:textSize="18sp"
+        android:textColor="@color/crispyBlue"
+        android:layout_below="@+id/ss_text"
+        android:layout_marginTop="24dp"
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold"
+        android:id="@+id/ss_text1"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/TextStyle14Login"
+        android:gravity="center_horizontal"
+        android:layout_below="@+id/ss_text1"
+        android:layout_marginTop="12dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/ss_text2"
+        android:textColor="@color/crispyBlue"
+        />
+
+    <TextView
+        android:id="@+id/ss_u_likes"
+        android:layout_below="@+id/ss_text2"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/unlimited_likes"
+        android:textSize="14sp"
+        android:gravity="center_vertical"
+        android:drawableStart="@drawable/ic_unlimited"
+        android:drawablePadding="12dp"
+        android:textColor="@color/crispyBlue"
+        />
+
+    <TextView
+        android:id="@+id/ss_u_rewinds"
+        android:layout_below="@+id/ss_u_likes"
+        android:layout_marginTop="12dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:textSize="14sp"
+        android:textColor="@color/crispyBlue"
+        android:textStyle="normal"
+        android:gravity="start|top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/unlimited_rewinds"
+        android:drawableStart="@drawable/ic_unlimited"
+        android:drawablePadding="12dp"
+        />
+
+    <TextView
+        android:id="@+id/ss_u_super_likes"
+        android:layout_below="@+id/ss_u_rewinds"
+        android:layout_marginTop="12dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:textSize="14sp"
+        android:textColor="@color/crispyBlue"
+        android:gravity="center_vertical"
+        android:textStyle="normal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/unlimited_super_likes"
+        android:drawableStart="@drawable/ic_unlimited"
+        android:drawablePadding="12dp"
+        />
+
+    <TextView
+        android:id="@+id/ss_u_messaging"
+        android:layout_below="@+id/ss_u_super_likes"
+        android:layout_marginTop="12dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:textSize="14sp"
+        android:gravity="center_vertical"
+        android:textColor="@color/crispyBlue"
+        android:textStyle="normal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/unlimited_instant_messaging"
+        android:drawableStart="@drawable/ic_unlimited"
+        android:drawablePadding="12dp"
+        />
+
+    <mehdi.sakout.fancybuttons.FancyButton
+        android:id="@+id/ss_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ss_u_messaging"
+        android:paddingBottom="10dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="10dp"
+        fancy:fb_fontIconSize="20dp"
+        fancy:fb_defaultColor="@color/crispyBlue"
+        fancy:fb_focusColor="@color/white"
+        fancy:fb_radius="7dp"
+        fancy:fb_text="CONTINUE"
+        fancy:fb_textColor="@color/white"
+        android:elevation="@dimen/elevation"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:layout_marginBottom="12dp"
+        />
+
+    </RelativeLayout>
+</RelativeLayout>

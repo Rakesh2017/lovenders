@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/transparent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView
+        android:id="@+id/ui_page_number_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/_1"
+        android:padding="@dimen/text_view_padding"
+        style="@style/TextStyle20"
+        android:textSize="24sp"
+        android:textColor="@color/white"
+        android:elevation="@dimen/elevation"
+        android:textStyle="bold"
+        android:visibility="gone"
+        />
+
+    <ImageView
+        android:id="@+id/ui_image_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:transitionName="image"
+        android:background="@color/black"
+        tools:ignore="ContentDescription" />
+
+</RelativeLayout>
